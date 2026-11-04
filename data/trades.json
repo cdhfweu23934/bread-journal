@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04T19:13:21.646Z",
+  "updatedAt": "2026-11-04T19:45:54.349Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -52,26 +52,26 @@
     }
   ],
   "live": {
-    "state": "awaiting_recovery",
-    "asOf": "2026-11-04T19:13:21.646Z",
+    "state": "stopped",
+    "asOf": "2026-11-04T19:45:54.349Z",
     "botVersion": "1.0.7",
     "closed": 13,
-    "unresolved": 1,
+    "unresolved": 0,
     "open": 0
   },
   "stats": {
     "closedTrades": 13,
-    "writtenOffTrades": 1,
-    "scoredTrades": 14,
-    "unresolvedTrades": 1,
+    "writtenOffTrades": 2,
+    "scoredTrades": 15,
+    "unresolvedTrades": 0,
     "openTrades": 0,
     "knownPnlTrades": 13,
     "wins": 0,
     "losses": 13,
     "winRatePercent": 0,
     "meanPnlPercent": -28.020117,
-    "meanScorePercent": -33.161538,
-    "lastTenCappedMeanPercent": -38.502614
+    "meanScorePercent": -37.617435,
+    "lastTenCappedMeanPercent": -42.584078
   },
   "trades": [
     {
@@ -276,11 +276,11 @@
       "name": null,
       "symbol": null,
       "botVersion": "1.0.7",
-      "status": "unresolved",
+      "status": "written_off",
       "entryMarketCapUsd": 3084.35,
       "exitMarketCapUsd": null,
       "pnlPercent": null,
-      "scorePercent": null,
+      "scorePercent": -100,
       "openedAt": "2026-11-04T19:11:51.372Z",
       "closedAt": null
     }
