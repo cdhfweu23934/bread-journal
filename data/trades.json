@@ -12,13 +12,19 @@
       "version": "1.0.1",
       "registeredAt": "2026-11-04T15:25:34.531Z",
       "summary": "Preserve illiquid paper inventory, score write-offs honestly, and stamp trade versions.",
+      "active": false
+    },
+    {
+      "version": "1.0.2",
+      "registeredAt": "2026-11-04T16:01:50.761Z",
+      "summary": "Restore recovered paper trades while preserving their original entry times and versions.",
       "active": true
     }
   ],
   "live": {
     "state": "awaiting_recovery",
     "asOf": "2026-11-04T13:02:19.613Z",
-    "botVersion": "1.0.1",
+    "botVersion": "1.0.2",
     "closed": 12,
     "unresolved": 1,
     "open": 0
