@@ -48,6 +48,12 @@
       "version": "1.0.7",
       "registeredAt": "2026-11-04T19:01:24.149Z",
       "summary": "Handle larger token families and retain rejection details.",
+      "active": false
+    },
+    {
+      "version": "1.0.8",
+      "registeredAt": "2026-11-04T20:44:33.846Z",
+      "summary": "Track extension changes in bot versions.",
       "active": true
     }
   ],
