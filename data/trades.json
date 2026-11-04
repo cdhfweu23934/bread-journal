@@ -30,6 +30,12 @@
       "version": "1.0.4",
       "registeredAt": "2026-11-04T16:59:37.943Z",
       "summary": "Bound repeated exit checks and keep data usage current.",
+      "active": false
+    },
+    {
+      "version": "1.0.5",
+      "registeredAt": "2026-11-04T17:53:05.352Z",
+      "summary": "Retain public pool state when an exit quote lacks liquidity.",
       "active": true
     }
   ],
