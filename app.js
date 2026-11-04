@@ -11,6 +11,13 @@
   const shortMint = mint => mint.slice(0, 5) + '…' + mint.slice(-5);
   const date = (value, full=false) => value ? new Intl.DateTimeFormat('en-GB', {day:'2-digit',month:'short',...(full?{year:'numeric'}:{}),hour:'2-digit',minute:'2-digit',timeZone:'UTC'}).format(new Date(value)) + (full?' UTC':'') : '—';
   const tokenName = trade => trade.symbol || trade.name || shortMint(trade.mint);
+  const statusLabel = status => status === 'written_off' ? 'Written off' : status[0].toUpperCase() + status.slice(1);
+  function scoreSummary(trades) {
+    const terminal=trades.filter(t=>t.status==='closed'||t.status==='written_off');
+    const scores=terminal.map(t=>t.status==='written_off'?-100:t.pnlPercent),last=scores.slice(-10);
+    return {terminal:terminal.length,known:scores.filter(finite).length,writtenOff:trades.filter(t=>t.status==='written_off').length,
+      lastTenMean:last.length===10&&last.every(finite)?last.reduce((sum,n)=>sum+Math.min(333,n),0)/10:null};
+  }
   const state = {unlocked:false,data:null,view:'overview',filter:'all',version:'all',query:'',sort:'time',direction:-1,page:1,pageSize:10,refreshing:false,chartTrades:[],drawerId:null};
   let refreshTimer, fetchController, toastTimer, priorFocus, requestGeneration=0;
   const storage = {get:()=>{try{return sessionStorage.getItem('bread-journal-open')==='yes';}catch{return false;}},set:value=>{try{value?sessionStorage.setItem('bread-journal-open','yes'):sessionStorage.removeItem('bread-journal-open');}catch{}}};
@@ -19,7 +26,8 @@
     if (!payload || payload.schemaVersion !== 1 || !Array.isArray(payload.trades) || payload.trades.length > 10000) throw new Error('This export has an unsupported format.');
     const seen = new Set();
     const trades = payload.trades.map((row,index) => {
-      if (!row || typeof row.mint !== 'string' || !/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(row.mint) || !['closed','open','unresolved'].includes(row.status)) throw new Error('This export contains an invalid trade record.');
+      if (!row || typeof row.mint !== 'string' || !/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(row.mint) || !['closed','open','unresolved','written_off'].includes(row.status)) throw new Error('This export contains an invalid trade record.');
+      if(row.status==='written_off'&&row.scorePercent!==-100)throw new Error('This export contains an invalid write-off score.');
       const id = typeof row.id === 'string' && row.id.length <= 200 ? row.id : `${row.mint}:${index}`;
       if(seen.has(id)) throw new Error('This export contains a duplicate trade.'); seen.add(id);
       const cleanText = (value,max) => typeof value==='string'&&value.length<=max&&!/[\r\n\0]/.test(value)?value:null;
@@ -27,6 +35,7 @@
         entryMarketCapUsd:finite(row.entryMarketCapUsd)&&row.entryMarketCapUsd>=0?row.entryMarketCapUsd:null,
         exitMarketCapUsd:row.status==='closed'&&finite(row.exitMarketCapUsd)&&row.exitMarketCapUsd>=0?row.exitMarketCapUsd:null,
         pnlPercent:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
+        scorePercent:row.status==='written_off'?-100:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
         openedAt:validDate(row.openedAt),closedAt:row.status==='closed'?validDate(row.closedAt):null};
     });
     return {versions:Array.isArray(payload.versions)?payload.versions.filter(v=>v&&typeof v.version==='string'&&/^\d+\.\d+\.\d+$/.test(v.version)).slice(-100):[],updatedAt:validDate(payload.updatedAt),live:payload.live&&typeof payload.live==='object'?payload.live:{},stats:payload.stats&&typeof payload.stats==='object'?payload.stats:{},trades};
@@ -39,7 +48,7 @@
   function logout() {
     state.unlocked=false;requestGeneration++;storage.set(false);clearInterval(refreshTimer);fetchController?.abort();state.refreshing=false;$('refresh').classList.remove('refreshing');closeDrawer(false);
     state.data=null;state.chartTrades=[];state.query='';state.filter='all';state.version='all';state.page=1;$('search').value='';$('version-filter').replaceChildren();$('version-history').replaceChildren();
-    ['trade-rows','metrics','performance-chart','status-summary','runner-state'].forEach(id=>$(id).replaceChildren());
+    ['trade-rows','metrics','score-summary','performance-chart','status-summary','runner-state'].forEach(id=>$(id).replaceChildren());
     $('chart-tooltip').replaceChildren();$('chart-tooltip').hidden=true;$('trade-count').textContent='';
     document.querySelectorAll('[data-count]').forEach(node=>node.textContent='0');$('page-summary').textContent='';$('page-number').textContent='';
     $('export-time').textContent='Checks every 30 seconds · exports arrive in batches.';
@@ -98,13 +107,14 @@
     renderVersions();const {stats,live,updatedAt}=state.data,trades=versionTrades(),closed=trades.filter(t=>t.status==='closed'),known=closed.filter(t=>t.pnlPercent!==null);
     const mean=known.length?known.reduce((sum,t)=>sum+t.pnlPercent,0)/known.length:null;
     const winRate=known.length?known.filter(t=>t.pnlPercent>0).length/known.length*100:null;
-    const unresolved=trades.filter(t=>t.status==='unresolved').length,open=trades.filter(t=>t.status==='open').length;
+    const unresolved=trades.filter(t=>t.status==='unresolved').length,open=trades.filter(t=>t.status==='open').length,score=scoreSummary(trades);
     const metrics=[
-      {label:'Closed trades',value:String(closed.length),note:'The completed record',marker:'01'},
+      {label:'Closed trades',value:String(closed.length),note:'Executed exits only',marker:'01'},
       {label:'Average PnL',value:percent(mean),note:`${known.length} known executed returns`,marker:'02',color:pnlClass(mean)},
       {label:'Win rate',value:winRate===null?'—':new Intl.NumberFormat('en-US',{maximumFractionDigits:1}).format(winRate)+'%',note:'Profitable / known closes',marker:'03'},
       {label:'Unresolved',value:String(unresolved),note:unresolved?'Inventory still awaiting resolution':'No unresolved positions',marker:'04'}];
     $('metrics').innerHTML=metrics.map(m=>`<div class="metric"><div class="metric-label">${m.label}<span class="metric-marker">[ ${m.marker} ]</span></div><div class="metric-value ${m.color||''}">${m.value}</div><div class="metric-note">${m.note}</div></div>`).join('');
+    $('score-summary').innerHTML=`<div class="score-stat"><span>Scored outcomes</span><strong>${score.known}</strong><small>${score.known} known / ${score.terminal} terminal</small></div><div class="score-stat"><span>Written off</span><strong>${score.writtenOff}</strong><small>Unsold tokens retained; no sale</small></div><div class="score-stat"><span>Last 10 score</span><strong class="${pnlClass(score.lastTenMean)}">${percent(score.lastTenMean)}</strong><small>${score.lastTenMean===null?'Requires ten known terminal outcomes':'Includes write-offs; +333% upper cap'}</small></div>`;
     const rawState=typeof live.state==='string'?live.state.toLowerCase():'';
     let runner='Status unavailable';
     if(rawState==='awaiting_recovery')runner='Awaiting position recovery.';
@@ -113,12 +123,12 @@
     else if(['running','paper_running','observing_axiom_paper_only','trading'].includes(rawState))runner='Paper session active.';
     else if(rawState.includes('quote')||rawState.includes('monitor'))runner='Quote observation only.';
     $('runner-state').textContent=runner;
-    $('status-summary').innerHTML=`<div><span>Closed positions</span><b>${closed.length}</b></div><div><span>Open positions</span><b>${open}</b></div><div><span>Unresolved positions</span><b>${unresolved}</b></div>`;
+    $('status-summary').innerHTML=`<div><span>Sold positions</span><b>${closed.length}</b></div><div><span>Written-off positions</span><b>${score.writtenOff}</b></div><div><span>Scored outcomes</span><b>${score.known}</b></div><div><span>Open positions</span><b>${open}</b></div><div><span>Unresolved positions</span><b>${unresolved}</b></div>`;
     const age=updatedAt?Math.max(0,Date.now()-Date.parse(updatedAt)):Infinity;
     $('connection').className='connection '+(age<=300000?'fresh':'stale');
     $('connection').innerHTML='<span></span>'+(!updatedAt?'Snapshot time unknown':age<60000?'Snapshot just now':`Snapshot ${Math.floor(age/60000)}m ago`);
     $('export-time').textContent=updatedAt?`Snapshot recorded ${date(updatedAt,true)} · checks every 30s`:'Checks every 30s · snapshot time unavailable';
-    const counts={all:trades.length,closed:closed.length,open,unresolved};
+    const counts={all:trades.length,closed:closed.length,written_off:score.writtenOff,open,unresolved};
     document.querySelectorAll('[data-count]').forEach(node=>node.textContent=counts[node.dataset.count]);
     $('trade-count').textContent=trades.length;renderChart(known);renderRows();
     if(state.drawerId){const trade=trades.find(t=>t.id===state.drawerId);if(trade)renderDrawer(trade);else closeDrawer();}
@@ -151,7 +161,7 @@
   function renderRows() {
     if(!state.data)return;const trades=visibleTrades(),pages=Math.max(1,Math.ceil(trades.length/state.pageSize));state.page=Math.min(state.page,pages);
     const offset=(state.page-1)*state.pageSize,rows=trades.slice(offset,offset+state.pageSize);
-    $('trade-rows').innerHTML=rows.map(t=>`<tr data-trade-id="${escape(t.id)}"><td><button class="token-trigger" data-trade-id="${escape(t.id)}"><span class="token-avatar" aria-hidden="true">${escape((t.symbol||t.name||t.mint).slice(0,1).toUpperCase())}</span><span><span class="token-title">${escape(tokenName(t))}${t.symbol&&t.name?`<span class="token-ticker">${escape(t.name)}</span>`:''}</span><span class="token-ca">${escape(shortMint(t.mint))}</span><span class="trade-version">${t.botVersion?"v"+escape(t.botVersion):"Before versioning"}</span></span></button></td><td><span class="status ${t.status}">${t.status[0].toUpperCase()+t.status.slice(1)}</span></td><td class="numeric">${price(t.entryMarketCapUsd)}</td><td class="numeric">${price(t.exitMarketCapUsd)}</td><td class="numeric pnl-cell ${pnlClass(t.pnlPercent)}">${percent(t.pnlPercent)}</td><td class="recorded-cell">${date(t.closedAt||t.openedAt)}</td><td><svg class="icon row-arrow"><use href="#i-chevron"/></svg></td></tr>`).join('');
+    $('trade-rows').innerHTML=rows.map(t=>`<tr data-trade-id="${escape(t.id)}"><td><button class="token-trigger" data-trade-id="${escape(t.id)}"><span class="token-avatar" aria-hidden="true">${escape((t.symbol||t.name||t.mint).slice(0,1).toUpperCase())}</span><span><span class="token-title">${escape(tokenName(t))}${t.symbol&&t.name?`<span class="token-ticker">${escape(t.name)}</span>`:''}</span><span class="token-ca">${escape(shortMint(t.mint))}</span><span class="trade-version">${t.botVersion?"v"+escape(t.botVersion):"Before versioning"}</span></span></button></td><td><span class="status ${t.status}">${statusLabel(t.status)}</span>${t.status==='written_off'?'<small class="status-detail">Tokens retained</small>':''}</td><td class="numeric">${price(t.entryMarketCapUsd)}</td><td class="numeric">${price(t.exitMarketCapUsd)}</td><td class="numeric pnl-cell ${pnlClass(t.pnlPercent)}">${percent(t.pnlPercent)}${t.status==='written_off'?`<small class="writeoff-score negative">Score ${percent(t.scorePercent)}</small>`:''}</td><td class="recorded-cell">${date(t.closedAt||t.openedAt)}</td><td><svg class="icon row-arrow"><use href="#i-chevron"/></svg></td></tr>`).join('');
     $('ledger-empty').hidden=trades.length!==0;$('empty-description').textContent=state.data.trades.length?'Try a different contract address or status.':'No trades have been included in this export yet.';
     $('clear-filters').hidden=!state.query&&state.filter==='all'&&state.version==='all';
     $('page-summary').textContent=trades.length?`${offset+1}–${Math.min(offset+state.pageSize,trades.length)} of ${trades.length} trades`:'0 trades';
@@ -160,8 +170,14 @@
     document.querySelectorAll('[data-sort]').forEach(button=>{const active=button.dataset.sort===state.sort;button.classList.toggle('sort-current',active);button.querySelector('span').textContent=active?(state.direction===1?'↑':'↓'):'↕';button.closest('th').setAttribute('aria-sort',active?(state.direction===1?'ascending':'descending'):'none');});
   }
   function renderDrawer(trade) {
-    const explanation=trade.status==='unresolved'?'This position is unresolved. Its held inventory has no recorded completed exit, so realized PnL remains unknown.':trade.status==='open'?'This position is still open. An exit market cap and realized PnL are not available yet.':'PnL compares actual executed gross exit proceeds with actual entry principal. Fees are excluded.';
+    const explanation=trade.status==='written_off'?'This is an accounting write-off, not a sale. Its -100% score counts toward the run. Unsold tokens are retained, and any later recovery is recorded separately.':trade.status==='unresolved'?'This position is unresolved. Its held inventory has no recorded completed exit, so realized PnL remains unknown.':trade.status==='open'?'This position is still open. An exit market cap and realized PnL are not available yet.':'PnL compares actual executed gross exit proceeds with actual entry principal. Fees are excluded.';
     $('drawer-content').innerHTML=`<div class="drawer-identity"><span class="token-avatar">${escape((trade.symbol||trade.name||trade.mint).slice(0,1).toUpperCase())}</span><div><h2 id="drawer-title">${escape(tokenName(trade))}</h2><small>${trade.symbol&&trade.name?escape(trade.name):'SOLANA / PAPER POSITION'}</small></div></div><span class="status ${trade.status}">${trade.status[0].toUpperCase()+trade.status.slice(1)}</span><div class="drawer-pnl"><span class="eyebrow">EXECUTED PNL</span><strong class="${pnlClass(trade.pnlPercent)}">${percent(trade.pnlPercent)}</strong><small>${trade.pnlPercent===null?'No realized return recorded':'Executed price return · fees excluded'}</small></div><dl class="drawer-caps"><div><dt>Entry market cap</dt><dd>${price(trade.entryMarketCapUsd)}</dd></div><div><dt>Exit market cap</dt><dd>${price(trade.exitMarketCapUsd)}</dd></div></dl><div class="drawer-ca"><div class="drawer-ca-label">Contract address</div><div class="ca-control"><code>${escape(trade.mint)}</code><button class="icon-button" id="copy-ca" aria-label="Copy contract address">${icons('copy')}</button></div></div><dl class="drawer-times"><div><dt>Opened</dt><dd>${date(trade.openedAt,true)}</dd></div><div><dt>Closed</dt><dd>${date(trade.closedAt,true)}</dd></div></dl><p class="drawer-explanation">${explanation}</p>`;
+    $('drawer-content').querySelector('.status').textContent=statusLabel(trade.status);
+    if(trade.status==='written_off'){
+      $('drawer-content').querySelector('.drawer-pnl small').textContent='No sale recorded';
+      const score=document.createElement('div');score.className='drawer-score';score.innerHTML=`<span class="eyebrow">ACCOUNTING SCORE</span><strong class="negative">${percent(trade.scorePercent)}</strong><p>Unsold tokens retained. No executed exit is claimed.</p>`;
+      $('drawer-content').querySelector('.drawer-pnl').after(score);
+    }
     const mcNote=document.createElement('p');mcNote.className='drawer-mc-note';mcNote.textContent='USD market caps use cached display-time SOL/USD.';
     $('drawer-content').querySelector('.drawer-caps').after(mcNote);
     const version=document.createElement('p');version.className='drawer-version';version.textContent='Bot at entry: '+(trade.botVersion?'v'+trade.botVersion:'Before versioning');$('drawer-content').append(version);
