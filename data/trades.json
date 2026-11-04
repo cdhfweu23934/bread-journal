@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04T15:43:39.524Z",
+  "updatedAt": "2026-11-04T16:02:48.000Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -18,12 +18,18 @@
       "version": "1.0.2",
       "registeredAt": "2026-11-04T16:01:50.761Z",
       "summary": "Restore recovered paper trades while preserving their original entry times and versions.",
+      "active": false
+    },
+    {
+      "version": "1.0.3",
+      "registeredAt": "2026-11-04T16:24:51.236Z",
+      "summary": "Support Axiom's updated public new-pair feed.",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-04T15:43:39.524Z",
+    "asOf": "2026-11-04T16:02:48.000Z",
     "botVersion": "1.0.2",
     "closed": 13,
     "unresolved": 0,
