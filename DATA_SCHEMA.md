@@ -6,9 +6,10 @@ Version 1 has exactly these fields:
 
 - `schemaVersion`: `1`.
 - `updatedAt`: UTC timestamp of the source snapshot.
-- `live`: `{state, asOf, closed, unresolved, open}`. State is `running`, `stopped`, `awaiting_recovery`, or `unknown`. Unresolved inventory remains distinct from closed inventory.
+- `versions`: `{version, registeredAt, summary, active}` rows from the local version registry. Only version, registration date, bounded summary, and whether it is the latest release are public. Behavior fingerprints and paths are excluded.
+- `live`: `{state, asOf, botVersion, closed, unresolved, open}`. State is `running`, `stopped`, `awaiting_recovery`, or `unknown`. `botVersion` is the latest registered version, not a retrospective label on earlier trades. Unresolved inventory remains distinct from closed inventory.
 - `stats`: `{closedTrades, unresolvedTrades, openTrades, knownPnlTrades, wins, losses, winRatePercent, meanPnlPercent, lastTenCappedMeanPercent}`.
-- `trades`: rows `{id, mint, name, symbol, status, entryMarketCapUsd, exitMarketCapUsd, pnlPercent, openedAt, closedAt}`. Status is `closed`, `open`, or `unresolved`.
+- `trades`: rows `{id, mint, name, symbol, botVersion, status, entryMarketCapUsd, exitMarketCapUsd, pnlPercent, openedAt, closedAt}`. Status is `closed`, `open`, or `unresolved`. A version is emitted only from a position's own immutable stamp matching its registered behavior; legacy trades remain `botVersion:null` (Before versioning). The current thirteen legacy trades are not relabeled 1.0.0. These additive fields retain schema version 1; viewers should tolerate missing version fields in older payloads.
 
 Trade PnL preserves the existing report/goal definition exactly: `(actual executed gross exit proceeds − actual executed entry principal) / actual executed entry principal × 100`. It derives from matching successful local VM buy/sell facts, not the position's rounded stored ROI, wallet cash outlay, refundable rent, or a quote. Fees are excluded from this metric. All losses remain in the series. The last-ten mean requires ten closed outcomes with known PnL and caps only each positive contribution above +333%. Open and unresolved rows have no realized PnL or exit market cap.
 

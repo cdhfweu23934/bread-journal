@@ -11,7 +11,7 @@
   const shortMint = mint => mint.slice(0, 5) + '…' + mint.slice(-5);
   const date = (value, full=false) => value ? new Intl.DateTimeFormat('en-GB', {day:'2-digit',month:'short',...(full?{year:'numeric'}:{}),hour:'2-digit',minute:'2-digit',timeZone:'UTC'}).format(new Date(value)) + (full?' UTC':'') : '—';
   const tokenName = trade => trade.symbol || trade.name || shortMint(trade.mint);
-  const state = {unlocked:false,data:null,view:'overview',filter:'all',query:'',sort:'time',direction:-1,page:1,pageSize:10,refreshing:false,chartTrades:[],drawerId:null};
+  const state = {unlocked:false,data:null,view:'overview',filter:'all',version:'all',query:'',sort:'time',direction:-1,page:1,pageSize:10,refreshing:false,chartTrades:[],drawerId:null};
   let refreshTimer, fetchController, toastTimer, priorFocus, requestGeneration=0;
   const storage = {get:()=>{try{return sessionStorage.getItem('bread-journal-open')==='yes';}catch{return false;}},set:value=>{try{value?sessionStorage.setItem('bread-journal-open','yes'):sessionStorage.removeItem('bread-journal-open');}catch{}}};
 
@@ -23,13 +23,13 @@
       const id = typeof row.id === 'string' && row.id.length <= 200 ? row.id : `${row.mint}:${index}`;
       if(seen.has(id)) throw new Error('This export contains a duplicate trade.'); seen.add(id);
       const cleanText = (value,max) => typeof value==='string'&&value.length<=max&&!/[\r\n\0]/.test(value)?value:null;
-      return {id,mint:row.mint,name:cleanText(row.name,128),symbol:cleanText(row.symbol,32),status:row.status,
+      return {id,botVersion:typeof row.botVersion==='string'&&/^\d+\.\d+\.\d+$/.test(row.botVersion)?row.botVersion:null,mint:row.mint,name:cleanText(row.name,128),symbol:cleanText(row.symbol,32),status:row.status,
         entryMarketCapUsd:finite(row.entryMarketCapUsd)&&row.entryMarketCapUsd>=0?row.entryMarketCapUsd:null,
         exitMarketCapUsd:row.status==='closed'&&finite(row.exitMarketCapUsd)&&row.exitMarketCapUsd>=0?row.exitMarketCapUsd:null,
         pnlPercent:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
         openedAt:validDate(row.openedAt),closedAt:row.status==='closed'?validDate(row.closedAt):null};
     });
-    return {updatedAt:validDate(payload.updatedAt),live:payload.live&&typeof payload.live==='object'?payload.live:{},stats:payload.stats&&typeof payload.stats==='object'?payload.stats:{},trades};
+    return {versions:Array.isArray(payload.versions)?payload.versions.filter(v=>v&&typeof v.version==='string'&&/^\d+\.\d+\.\d+$/.test(v.version)).slice(-100):[],updatedAt:validDate(payload.updatedAt),live:payload.live&&typeof payload.live==='object'?payload.live:{},stats:payload.stats&&typeof payload.stats==='object'?payload.stats:{},trades};
   }
   function unlock() {
     if(state.unlocked)return;
@@ -38,7 +38,7 @@
   }
   function logout() {
     state.unlocked=false;requestGeneration++;storage.set(false);clearInterval(refreshTimer);fetchController?.abort();state.refreshing=false;$('refresh').classList.remove('refreshing');closeDrawer(false);
-    state.data=null;state.chartTrades=[];state.query='';state.filter='all';state.page=1;$('search').value='';
+    state.data=null;state.chartTrades=[];state.query='';state.filter='all';state.version='all';state.page=1;$('search').value='';$('version-filter').replaceChildren();$('version-history').replaceChildren();
     ['trade-rows','metrics','performance-chart','status-summary','runner-state'].forEach(id=>$(id).replaceChildren());
     $('chart-tooltip').replaceChildren();$('chart-tooltip').hidden=true;$('trade-count').textContent='';
     document.querySelectorAll('[data-count]').forEach(node=>node.textContent='0');$('page-summary').textContent='';$('page-number').textContent='';
@@ -86,8 +86,16 @@
     $('overview-section').hidden=state.view==='journal';$('ledger-eyebrow').textContent=state.view==='journal'?'THE RUNNING RECORD':'THE LATEST ENTRIES';
     if(updateHash)history.replaceState(null,'','#'+state.view);if(state.data)renderRows();
   }
+  function versionTrades(){return state.data.trades.filter(t=>state.version==='all'||(t.botVersion||'legacy')===state.version);}
+  function renderVersions(){
+    const versions=[...new Set([...state.data.versions.map(v=>v.version),...state.data.trades.map(t=>t.botVersion).filter(Boolean)])];
+    if(state.version!=='all'&&state.version!=='legacy'&&!versions.includes(state.version))state.version='all';
+    const options=[['all','All versions'],...versions.map(v=>[v,'v'+v]),...(state.data.trades.some(t=>!t.botVersion)?[['legacy','Before versioning']]:[])];
+    $('version-filter').innerHTML=options.map(([v,label])=>'<option value="'+escape(v)+'">'+escape(label)+'</option>').join('');$('version-filter').value=state.version;
+    $('version-history').innerHTML=state.data.versions.length?state.data.versions.slice().reverse().map(v=>'<article class="release-row"><strong>v'+escape(v.version)+(v.active?' <small>Current</small>':'')+'</strong><time>'+date(validDate(v.registeredAt),true)+'</time><p>'+escape(typeof v.summary==='string'?v.summary.slice(0,240):'Bot release')+'</p></article>').join(''):'<p>Release tracking is being initialized.</p>';
+  }
   function render() {
-    const {trades,stats,live,updatedAt}=state.data,closed=trades.filter(t=>t.status==='closed'),known=closed.filter(t=>t.pnlPercent!==null);
+    renderVersions();const {stats,live,updatedAt}=state.data,trades=versionTrades(),closed=trades.filter(t=>t.status==='closed'),known=closed.filter(t=>t.pnlPercent!==null);
     const mean=known.length?known.reduce((sum,t)=>sum+t.pnlPercent,0)/known.length:null;
     const winRate=known.length?known.filter(t=>t.pnlPercent>0).length/known.length*100:null;
     const unresolved=trades.filter(t=>t.status==='unresolved').length,open=trades.filter(t=>t.status==='open').length;
@@ -135,7 +143,7 @@
   }
   function visibleTrades() {
     const query=state.query.trim().toLowerCase();
-    return state.data.trades.filter(t=>(state.filter==='all'||t.status===state.filter)&&(!query||[t.mint,t.name,t.symbol].some(v=>v?.toLowerCase().includes(query))))
+    return versionTrades().filter(t=>(state.filter==='all'||t.status===state.filter)&&(!query||[t.mint,t.name,t.symbol].some(v=>v?.toLowerCase().includes(query))))
       .sort((a,b)=>{const av=state.sort==='time'?Date.parse(a.closedAt||a.openedAt||''):a[state.sort],bv=state.sort==='time'?Date.parse(b.closedAt||b.openedAt||''):b[state.sort];
         if(av===null||!Number.isFinite(av))return bv===null||!Number.isFinite(bv)?a.id.localeCompare(b.id):1;
         if(bv===null||!Number.isFinite(bv))return-1;return(av-bv)*state.direction||a.id.localeCompare(b.id);});
@@ -143,9 +151,9 @@
   function renderRows() {
     if(!state.data)return;const trades=visibleTrades(),pages=Math.max(1,Math.ceil(trades.length/state.pageSize));state.page=Math.min(state.page,pages);
     const offset=(state.page-1)*state.pageSize,rows=trades.slice(offset,offset+state.pageSize);
-    $('trade-rows').innerHTML=rows.map(t=>`<tr data-trade-id="${escape(t.id)}"><td><button class="token-trigger" data-trade-id="${escape(t.id)}"><span class="token-avatar" aria-hidden="true">${escape((t.symbol||t.name||t.mint).slice(0,1).toUpperCase())}</span><span><span class="token-title">${escape(tokenName(t))}${t.symbol&&t.name?`<span class="token-ticker">${escape(t.name)}</span>`:''}</span><span class="token-ca">${escape(shortMint(t.mint))}</span></span></button></td><td><span class="status ${t.status}">${t.status[0].toUpperCase()+t.status.slice(1)}</span></td><td class="numeric">${price(t.entryMarketCapUsd)}</td><td class="numeric">${price(t.exitMarketCapUsd)}</td><td class="numeric pnl-cell ${pnlClass(t.pnlPercent)}">${percent(t.pnlPercent)}</td><td class="recorded-cell">${date(t.closedAt||t.openedAt)}</td><td><svg class="icon row-arrow"><use href="#i-chevron"/></svg></td></tr>`).join('');
+    $('trade-rows').innerHTML=rows.map(t=>`<tr data-trade-id="${escape(t.id)}"><td><button class="token-trigger" data-trade-id="${escape(t.id)}"><span class="token-avatar" aria-hidden="true">${escape((t.symbol||t.name||t.mint).slice(0,1).toUpperCase())}</span><span><span class="token-title">${escape(tokenName(t))}${t.symbol&&t.name?`<span class="token-ticker">${escape(t.name)}</span>`:''}</span><span class="token-ca">${escape(shortMint(t.mint))}</span><span class="trade-version">${t.botVersion?"v"+escape(t.botVersion):"Before versioning"}</span></span></button></td><td><span class="status ${t.status}">${t.status[0].toUpperCase()+t.status.slice(1)}</span></td><td class="numeric">${price(t.entryMarketCapUsd)}</td><td class="numeric">${price(t.exitMarketCapUsd)}</td><td class="numeric pnl-cell ${pnlClass(t.pnlPercent)}">${percent(t.pnlPercent)}</td><td class="recorded-cell">${date(t.closedAt||t.openedAt)}</td><td><svg class="icon row-arrow"><use href="#i-chevron"/></svg></td></tr>`).join('');
     $('ledger-empty').hidden=trades.length!==0;$('empty-description').textContent=state.data.trades.length?'Try a different contract address or status.':'No trades have been included in this export yet.';
-    $('clear-filters').hidden=!state.query&&state.filter==='all';
+    $('clear-filters').hidden=!state.query&&state.filter==='all'&&state.version==='all';
     $('page-summary').textContent=trades.length?`${offset+1}–${Math.min(offset+state.pageSize,trades.length)} of ${trades.length} trades`:'0 trades';
     $('page-number').textContent=`${state.page} / ${pages}`;$('previous-page').disabled=state.page<=1;$('next-page').disabled=state.page>=pages;
     document.querySelectorAll('[data-filter]').forEach(button=>{const active=button.dataset.filter===state.filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
@@ -156,6 +164,7 @@
     $('drawer-content').innerHTML=`<div class="drawer-identity"><span class="token-avatar">${escape((trade.symbol||trade.name||trade.mint).slice(0,1).toUpperCase())}</span><div><h2 id="drawer-title">${escape(tokenName(trade))}</h2><small>${trade.symbol&&trade.name?escape(trade.name):'SOLANA / PAPER POSITION'}</small></div></div><span class="status ${trade.status}">${trade.status[0].toUpperCase()+trade.status.slice(1)}</span><div class="drawer-pnl"><span class="eyebrow">EXECUTED PNL</span><strong class="${pnlClass(trade.pnlPercent)}">${percent(trade.pnlPercent)}</strong><small>${trade.pnlPercent===null?'No realized return recorded':'Executed price return · fees excluded'}</small></div><dl class="drawer-caps"><div><dt>Entry market cap</dt><dd>${price(trade.entryMarketCapUsd)}</dd></div><div><dt>Exit market cap</dt><dd>${price(trade.exitMarketCapUsd)}</dd></div></dl><div class="drawer-ca"><div class="drawer-ca-label">Contract address</div><div class="ca-control"><code>${escape(trade.mint)}</code><button class="icon-button" id="copy-ca" aria-label="Copy contract address">${icons('copy')}</button></div></div><dl class="drawer-times"><div><dt>Opened</dt><dd>${date(trade.openedAt,true)}</dd></div><div><dt>Closed</dt><dd>${date(trade.closedAt,true)}</dd></div></dl><p class="drawer-explanation">${explanation}</p>`;
     const mcNote=document.createElement('p');mcNote.className='drawer-mc-note';mcNote.textContent='USD market caps use cached display-time SOL/USD.';
     $('drawer-content').querySelector('.drawer-caps').after(mcNote);
+    const version=document.createElement('p');version.className='drawer-version';version.textContent='Bot at entry: '+(trade.botVersion?'v'+trade.botVersion:'Before versioning');$('drawer-content').append(version);
     $('copy-ca').addEventListener('click',()=>copy(trade.mint));
   }
   function openDrawer(id) {
@@ -186,7 +195,8 @@
   $('search').addEventListener('input',()=>{state.query=$('search').value;state.page=1;if(state.view!=='journal')setView('journal');else renderRows();});
   $('page-size').addEventListener('change',()=>{state.pageSize=Number($('page-size').value);state.page=1;renderRows();});
   $('previous-page').addEventListener('click',()=>{state.page--;renderRows();});$('next-page').addEventListener('click',()=>{state.page++;renderRows();});
-  $('clear-filters').addEventListener('click',()=>{state.query='';state.filter='all';state.page=1;$('search').value='';renderRows();});
+  $('clear-filters').addEventListener('click',()=>{state.query='';state.filter='all';state.version='all';state.page=1;$('search').value='';render();});
+  $('version-filter').addEventListener('change',()=>{state.version=$('version-filter').value;state.page=1;render();});
   $('trade-rows').addEventListener('click',event=>{const row=event.target.closest('[data-trade-id]');if(row)openDrawer(row.dataset.tradeId);});
   $('close-drawer').addEventListener('click',()=>closeDrawer());$('drawer-backdrop').addEventListener('click',()=>closeDrawer());
   $('performance-chart').addEventListener('mouseover',event=>{if(event.target.matches('[data-index]'))chartTooltip(event.target);});
