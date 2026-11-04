@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-04T13:02:19.613Z",
+  "live": {
+    "state": "awaiting_recovery",
+    "asOf": "2026-11-04T13:02:19.613Z",
+    "closed": 12,
+    "unresolved": 1,
+    "open": 0
+  },
+  "stats": {
+    "closedTrades": 12,
+    "unresolvedTrades": 1,
+    "openTrades": 0,
+    "knownPnlTrades": 12,
+    "wins": 0,
+    "losses": 12,
+    "winRatePercent": 0,
+    "meanPnlPercent": -28.86624,
+    "lastTenCappedMeanPercent": -30.157681
+  },
+  "trades": [
+    {
+      "id": "paper:eea80830-33f8-4269-94e7-5acab6ec4dae",
+      "mint": "CLk4f6cdWXfvLBGJ4v3Em6ysG4btetyrbnX1P7Kn3LLS",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 2997.1,
+      "exitMarketCapUsd": 2737.03,
+      "pnlPercent": -8.677542,
+      "openedAt": "2026-11-02T09:36:34.121Z",
+      "closedAt": "2026-11-02T09:37:35.230Z"
+    },
+    {
+      "id": "paper:cb2c302f-8d05-4a58-b218-ba2fe0979924",
+      "mint": "8X72Teim4RGQf2kcRtrdt6BVyuHV5hvYqZtFUjGTpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 4121.72,
+      "exitMarketCapUsd": 2632.11,
+      "pnlPercent": -36.140527,
+      "openedAt": "2026-11-02T11:37:48.802Z",
+      "closedAt": "2026-11-02T11:37:49.382Z"
+    },
+    {
+      "id": "paper:b874b93d-7145-4cad-9025-30119625ced7",
+      "mint": "EeqkrTQTpK64NrV5iojkMxGnTvf8M35YvLiZBDXBpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 3234.86,
+      "exitMarketCapUsd": 2820.22,
+      "pnlPercent": -12.817952,
+      "openedAt": "2026-11-02T12:46:24.270Z",
+      "closedAt": "2026-11-02T12:47:25.408Z"
+    },
+    {
+      "id": "paper:cf87bcdc-0923-4640-92dc-4f7c56b20338",
+      "mint": "J32jeUyYwUs6YRgBSnenMccnM93ACp1w4gpUuRJspump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 4047.66,
+      "exitMarketCapUsd": 3173.39,
+      "pnlPercent": -21.599368,
+      "openedAt": "2026-11-02T12:50:52.926Z",
+      "closedAt": "2026-11-02T12:51:35.848Z"
+    },
+    {
+      "id": "paper:c3529db5-8484-4044-95d5-6b2854f80909",
+      "mint": "6VN2hBQxsZiLvKZjSpJrZ7JQEGPUYqB4gBMhJb2Hpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 7738.78,
+      "exitMarketCapUsd": 3158.56,
+      "pnlPercent": -59.185362,
+      "openedAt": "2026-11-02T18:39:58.640Z",
+      "closedAt": "2026-11-02T18:40:23.048Z"
+    },
+    {
+      "id": "paper:b5db9a08-3e90-49ce-b5fd-23c7e82f3dfc",
+      "mint": "8n4tHCqHdpFkwsY2qGfhMzJY89ou12hVBLS6AZSkpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 7858.96,
+      "exitMarketCapUsd": 5336.62,
+      "pnlPercent": -32.095034,
+      "openedAt": "2026-11-03T23:35:29.750Z",
+      "closedAt": "2026-11-03T23:35:34.705Z"
+    },
+    {
+      "id": "paper:5a9b5817-8f6b-4857-a12b-ce53644b5541",
+      "mint": "EuQkdGcy9uY2Vi4JLMMty6Sn3iQwGz9NxkgZLoVPpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 5359.36,
+      "exitMarketCapUsd": 4025.86,
+      "pnlPercent": -24.881715,
+      "openedAt": "2026-11-03T23:52:13.762Z",
+      "closedAt": "2026-11-03T23:52:18.684Z"
+    },
+    {
+      "id": "paper:9ef286a5-ddf6-4a7e-85c6-8a7721ec708d",
+      "mint": "BdHPCV7QMQMx2ewjCmaMWr7sizHQyExZtLPNQ2MNpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 3184.28,
+      "exitMarketCapUsd": 2652.23,
+      "pnlPercent": -16.708702,
+      "openedAt": "2026-11-03T23:55:28.351Z",
+      "closedAt": "2026-11-03T23:56:29.889Z"
+    },
+    {
+      "id": "paper:7c0eea55-89d8-4584-818d-bf510ba29a04",
+      "mint": "CSkDjgxDvD52Q7KsMi64zzbUDBXr4uYrJ9jSp7Capump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 4285.91,
+      "exitMarketCapUsd": 2753.97,
+      "pnlPercent": -35.743525,
+      "openedAt": "2026-11-04T11:11:27.538Z",
+      "closedAt": "2026-11-04T11:11:41.135Z"
+    },
+    {
+      "id": "paper:77743393-fbd6-4da5-a1b0-de33079f58b0",
+      "mint": "53qijpa8SQv1aJMieLReH3kYipGyTWZb4uKbY4AKpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 6306.46,
+      "exitMarketCapUsd": 2847.16,
+      "pnlPercent": -54.853292,
+      "openedAt": "2026-11-04T12:20:58.513Z",
+      "closedAt": "2026-11-04T12:21:09.740Z"
+    },
+    {
+      "id": "paper:3ed97990-636a-4165-977e-eba1a546bc1b",
+      "mint": "5vRiCmyW7TgxXUw7SwsxiHKhXY2UBfPFntMmUYXppump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 4865.79,
+      "exitMarketCapUsd": 2980.75,
+      "pnlPercent": -38.740826,
+      "openedAt": "2026-11-04T12:25:10.626Z",
+      "closedAt": "2026-11-04T12:25:43.690Z"
+    },
+    {
+      "id": "paper:03c003da-ae25-4ef2-9338-f0fcc619d14b",
+      "mint": "giVQj2wFv26UYmJU8Z8kfsoELUwXH71eSDiaJzUpump",
+      "name": null,
+      "symbol": null,
+      "status": "closed",
+      "entryMarketCapUsd": 2827.07,
+      "exitMarketCapUsd": 2687.1,
+      "pnlPercent": -4.951036,
+      "openedAt": "2026-11-04T12:37:12.382Z",
+      "closedAt": "2026-11-04T12:38:13.749Z"
+    },
+    {
+      "id": "paper:2ef273f4-a8bc-473a-a157-1871c5cb72af",
+      "mint": "E6Kc7jwtiNG2XDJYZMd1DV23b66x6qq9jnNJPvz9pump",
+      "name": null,
+      "symbol": null,
+      "status": "unresolved",
+      "entryMarketCapUsd": 3151.71,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "openedAt": "2026-11-04T12:58:39.894Z",
+      "closedAt": null
+    }
+  ]
+}

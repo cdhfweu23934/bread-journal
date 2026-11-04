@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="BREAD — a paper trading journal.">
+  <title>BREAD — Trading journal</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23262520'/%3E%3Ctext x='13' y='48' font-family='Georgia' font-weight='bold' font-size='48' fill='%23f5f2e9'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></symbol>
+    <symbol id="i-journal" viewBox="0 0 24 24"><path d="M6 3h13v18H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM4 17h15M8 7h7M8 11h5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 11-1l3 6M4 12l3 6a7 7 0 0 0 11-1"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="i-exit" viewBox="0 0 24 24"><path d="M9 4H4v16h5M9 12h12m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  </defs></svg>
+
+  <section class="gate" id="gate" aria-labelledby="gate-title">
+    <header class="gate-top"><span class="tiny-label">THE PAPER TRADING JOURNAL</span><span class="edition">VOL. 01 / BREAD</span></header>
+    <div class="gate-wordmark" aria-label="Bread">BREAD<span class="wordmark-dot">.</span></div>
+    <div class="gate-bottom">
+      <div class="gate-intro"><span class="eyebrow"><span class="small-line"></span> EVERY TRADE LEAVES A TRACE</span><h1 id="gate-title">The numbers.<br>The whole story.</h1><p>A considered place to follow the journal.<br>Enter your password to take a look.</p></div>
+      <form class="gate-form" id="unlock-form">
+        <div class="gate-form-top"><span class="gate-index">[ 01 ]</span><svg class="icon"><use href="#i-lock"/></svg></div>
+        <h2>Come on in.</h2>
+        <label for="password">Journal password</label>
+        <div class="password-field"><input id="password" type="password" autocomplete="current-password" required maxlength="64" placeholder="Enter password" aria-describedby="gate-error"><button type="button" id="show-password" class="icon-button" aria-label="Show password" aria-pressed="false"><svg class="icon"><use href="#i-eye"/></svg></button></div>
+        <p class="form-error" id="gate-error" role="alert"></p>
+        <button type="submit" class="button button-ink gate-submit">Open journal <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <p class="gate-note">A simple viewing gate, not secure authentication.</p>
+      </form>
+    </div>
+    <footer class="gate-footer"><span>OBSERVE. RECORD. REVIEW.</span><span>PAPER TRADES ONLY <span class="orange-dot"></span></span></footer>
+  </section>
+
+  <div id="app" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a href="#overview" class="brand" data-view="overview" aria-label="BREAD overview">BREAD<span>.</span><small>TRADING JOURNAL</small></a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview" aria-current="page"><svg class="icon"><use href="#i-grid"/></svg><span>Overview</span><span class="nav-index">01</span></button>
+        <button class="nav-item" data-view="journal"><svg class="icon"><use href="#i-journal"/></svg><span>Trade journal</span><span class="nav-index">02</span></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="paper-seal"><span class="seal-symbol">B</span><div>PAPER, ON RECORD.<small>No real-money trades.</small></div></div><button id="logout" class="logout"><svg class="icon"><use href="#i-exit"/></svg> Lock journal</button></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div class="breadcrumb">WORKSPACE <span>/</span> <strong id="breadcrumb">OVERVIEW</strong></div><div class="topbar-right"><span class="connection" id="connection"><span></span> Waiting for export</span><button id="refresh" class="icon-button" aria-label="Refresh trade data"><svg class="icon"><use href="#i-refresh"/></svg></button><button id="logout-mobile" class="icon-button mobile-lock" aria-label="Lock journal"><svg class="icon"><use href="#i-lock"/></svg></button></div></header>
+      <main id="main-content">
+        <div class="page-heading"><div><div class="eyebrow" id="page-eyebrow">01 / THE OVERVIEW</div><h1 id="page-title">Paper, on record<span>.</span></h1><p id="page-description">Every entry. Every exit. A clearer picture.</p></div><div class="edition-mark"><span>B / J</span><small>THE RUNNING RECORD</small></div></div>
+        <div class="notice" id="notice" role="status" hidden></div>
+        <div id="loading" class="loading-state" role="status"><span class="loader"></span><span>Opening the ledger…</span></div>
+        <section id="data-error" class="state-panel" hidden><span class="state-index">[ ! ]</span><h2>The journal is unavailable.</h2><p id="error-message">We couldn’t read the latest trade export.</p><button class="button button-ink" id="retry">Try again <svg class="icon"><use href="#i-refresh"/></svg></button></section>
+        <div id="data-content" hidden>
+          <section class="metrics" aria-label="Journal summary" id="metrics"></section>
+          <section class="overview-grid" id="overview-section">
+            <div class="performance"><div class="section-heading"><div><span class="eyebrow">THE PERFORMANCE</span><h2>One close at a time.</h2></div><span class="chart-tag">EXECUTED P&L</span></div><div class="chart-wrap" id="chart-wrap"><svg id="performance-chart" viewBox="0 0 800 280" role="img" aria-label="Closed trade PnL sequence"></svg><div id="chart-tooltip" class="chart-tooltip" hidden></div><div id="chart-empty" class="chart-empty" hidden><span>Nothing plotted. Yet.</span><small>Closed trades with a known PnL will appear here.</small></div></div><div class="chart-foot"><span><i></i> PnL per closed trade</span><span>Executed price return · fees excluded</span></div></div>
+            <aside class="journal-note"><span class="eyebrow">AT A GLANCE</span><div class="runner-state" id="runner-state"></div><div class="status-summary" id="status-summary"></div><p>Every outcome stays in the record. Open and unresolved positions carry no realized PnL.</p><button class="text-link" data-view="journal">Explore the full journal <svg class="icon"><use href="#i-arrow"/></svg></button><div class="note-bottom">FACTS OVER FEELING.<span>↗</span></div></aside>
+          </section>
+          <section class="ledger" aria-labelledby="ledger-title"><div class="ledger-top"><div><span class="eyebrow" id="ledger-eyebrow">THE LATEST ENTRIES</span><h2 id="ledger-title">The trade ledger<span id="trade-count"></span></h2></div><div class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="search" type="search" placeholder="Search token or CA" aria-label="Search trades by token or contract address"><kbd>/</kbd></div></div>
+            <div class="ledger-controls"><div class="filters" role="group" aria-label="Trade status"><button class="filter active" data-filter="all" aria-pressed="true">All <span data-count="all">0</span></button><button class="filter" data-filter="closed" aria-pressed="false">Closed <span data-count="closed">0</span></button><button class="filter" data-filter="open" aria-pressed="false">Open <span data-count="open">0</span></button><button class="filter" data-filter="unresolved" aria-pressed="false">Unresolved <span data-count="unresolved">0</span></button></div><span class="ledger-caption" id="ledger-caption">ACTUAL PAPER TRADES</span></div>
+            <div class="table-scroll"><table><thead><tr><th scope="col">Token / contract</th><th scope="col">Status</th><th scope="col" class="numeric"><button data-sort="entryMarketCapUsd">Entry MC <span>↕</span></button></th><th scope="col" class="numeric"><button data-sort="exitMarketCapUsd">Exit MC <span>↕</span></button></th><th scope="col" class="numeric"><button data-sort="pnlPercent">PnL <span>↕</span></button></th><th scope="col"><button data-sort="time" class="sort-current">Recorded <span>↓</span></button></th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody id="trade-rows"></tbody></table></div>
+            <div class="ledger-empty" id="ledger-empty" hidden><svg class="icon"><use href="#i-search"/></svg><h3>No trades in this view.</h3><p id="empty-description">Try a different contract address or status.</p><button class="text-link" id="clear-filters">Clear filters <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+            <div class="pagination"><span id="page-summary"></span><div class="pagination-actions"><label>Rows <select id="page-size" aria-label="Rows per page"><option value="10">10</option><option value="20">20</option><option value="50">50</option></select></label><button id="previous-page" class="page-button" aria-label="Previous page"><svg class="icon flip"><use href="#i-chevron"/></svg></button><span id="page-number"></span><button id="next-page" class="page-button" aria-label="Next page"><svg class="icon"><use href="#i-chevron"/></svg></button></div></div>
+            <p class="data-basis">USD market caps use cached display-time SOL/USD. PnL uses executed gross proceeds / principal; fees excluded.</p>
+          </section>
+        </div>
+        <footer class="workspace-footer"><span>BREAD JOURNAL <span class="footer-dot">/</span> PAPER TRADES ONLY</span><span id="export-time">Checks every 30 seconds · exports arrive in batches.</span></footer>
+      </main>
+    </div>
+  </div>
+  <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+  <aside id="trade-drawer" class="trade-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden><div class="drawer-top"><span class="eyebrow">A CLOSER LOOK</span><button id="close-drawer" class="icon-button" aria-label="Close trade details"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="drawer-content"></div><div class="drawer-foot">Recorded, never rewritten.<span>PAPER JOURNAL</span></div></aside>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

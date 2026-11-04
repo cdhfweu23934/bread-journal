@@ -1,0 +1,8 @@
+tools/
+tests/
+node_modules/
+.private/
+*.log
+*.tmp
+*-qa.json
+*.png
