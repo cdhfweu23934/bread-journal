@@ -36,6 +36,12 @@
       "version": "1.0.5",
       "registeredAt": "2026-11-04T17:53:05.352Z",
       "summary": "Retain public pool state when an exit quote lacks liquidity.",
+      "active": false
+    },
+    {
+      "version": "1.0.6",
+      "registeredAt": "2026-11-04T18:35:57.117Z",
+      "summary": "Support native holder-reward launches with verified fees and exits.",
       "active": true
     }
   ],
