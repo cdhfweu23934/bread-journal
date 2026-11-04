@@ -60,6 +60,12 @@
       "version": "1.0.9",
       "registeredAt": "2026-11-04T22:57:26.403Z",
       "summary": "Expand family research within the existing quota.",
+      "active": false
+    },
+    {
+      "version": "1.0.10",
+      "registeredAt": "2026-11-04T23:25:02.755Z",
+      "summary": "Fix the budget log limit blocking market data reads.",
       "active": true
     }
   ],
