@@ -24,6 +24,12 @@
       "version": "1.0.3",
       "registeredAt": "2026-11-04T16:24:51.236Z",
       "summary": "Support Axiom's updated public new-pair feed.",
+      "active": false
+    },
+    {
+      "version": "1.0.4",
+      "registeredAt": "2026-11-04T16:59:37.943Z",
+      "summary": "Bound repeated exit checks and keep data usage current.",
       "active": true
     }
   ],
