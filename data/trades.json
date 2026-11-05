@@ -90,6 +90,12 @@
       "version": "1.0.14",
       "registeredAt": "2026-11-05T10:45:08.230Z",
       "summary": "Confirm browser cleanup after disconnects and keep active paper runs awake.",
+      "active": false
+    },
+    {
+      "version": "1.0.15",
+      "registeredAt": "2026-11-05T11:30:09.186Z",
+      "summary": "Retain bounded public pair metadata before strategy selection for prospective developer research.",
       "active": true
     }
   ],
