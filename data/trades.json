@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T00:49:10.085Z",
+  "updatedAt": "2026-11-05T00:59:23.742Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -77,18 +77,18 @@
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-05T00:49:10.085Z",
+    "asOf": "2026-11-05T00:59:23.742Z",
     "botVersion": "1.0.11",
     "closed": 20,
     "unresolved": 0,
-    "open": 0
+    "open": 1
   },
   "stats": {
     "closedTrades": 20,
     "writtenOffTrades": 2,
     "scoredTrades": 22,
     "unresolvedTrades": 0,
-    "openTrades": 0,
+    "openTrades": 1,
     "knownPnlTrades": 20,
     "wins": 3,
     "losses": 17,
@@ -405,6 +405,20 @@
       "scorePercent": -44.247297,
       "openedAt": "2026-11-05T00:12:31.887Z",
       "closedAt": "2026-11-05T00:12:45.964Z"
+    },
+    {
+      "id": "paper:6e0bc6a5-4e66-4536-a17c-ec99b5ccef7d",
+      "mint": "FftESVMpzQ2FQVGCrLkdxL4W2ojnPAHY2jcyZd2vpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.11",
+      "status": "open",
+      "entryMarketCapUsd": 2683.14,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "scorePercent": null,
+      "openedAt": "2026-11-05T00:59:13.415Z",
+      "closedAt": null
     }
   ]
 }
