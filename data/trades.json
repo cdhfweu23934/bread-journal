@@ -132,6 +132,12 @@
       "version": "1.0.21",
       "registeredAt": "2026-11-05T18:34:47.028Z",
       "summary": "Pilot the frozen reported-flow entry veto for at most 90 minutes and three durable reservations, preserving original counters and expiry; retry settled expired-calibration epochs within existing super",
+      "active": false
+    },
+    {
+      "version": "1.0.22",
+      "registeredAt": "2026-11-05T19:15:46.578Z",
+      "summary": "Raise only the finite flow pilot to 16 sequential observations under unchanged callback and byte caps, and identify the canonical participant behind closed-curve failures; preserve the original pilot ",
       "active": true
     }
   ],
