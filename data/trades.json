@@ -72,6 +72,12 @@
       "version": "1.0.11",
       "registeredAt": "2026-11-05T00:47:50.942Z",
       "summary": "Reduce bookkeeping latency and retain creator data for trade analysis.",
+      "active": false
+    },
+    {
+      "version": "1.0.12",
+      "registeredAt": "2026-11-05T08:46:49.399Z",
+      "summary": "Recover paper trading after a verified browser session replacement.",
       "active": true
     }
   ],
