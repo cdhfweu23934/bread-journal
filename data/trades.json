@@ -78,6 +78,12 @@
       "version": "1.0.12",
       "registeredAt": "2026-11-05T08:46:49.399Z",
       "summary": "Recover paper trading after a verified browser session replacement.",
+      "active": false
+    },
+    {
+      "version": "1.0.13",
+      "registeredAt": "2026-11-05T09:29:46.042Z",
+      "summary": "Restore live Pulse data after frontend changes and preserve final startup status.",
       "active": true
     }
   ],
