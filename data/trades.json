@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T00:00:00.532Z",
+  "updatedAt": "2026-11-05T00:00:18.521Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -71,25 +71,25 @@
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-05T00:00:00.532Z",
+    "asOf": "2026-11-05T00:00:18.521Z",
     "botVersion": "1.0.10",
-    "closed": 16,
+    "closed": 17,
     "unresolved": 0,
-    "open": 1
+    "open": 0
   },
   "stats": {
-    "closedTrades": 16,
+    "closedTrades": 17,
     "writtenOffTrades": 2,
-    "scoredTrades": 18,
+    "scoredTrades": 19,
     "unresolvedTrades": 0,
-    "openTrades": 1,
-    "knownPnlTrades": 16,
-    "wins": 2,
+    "openTrades": 0,
+    "knownPnlTrades": 17,
+    "wins": 3,
     "losses": 14,
-    "winRatePercent": 12.5,
-    "meanPnlPercent": -12.258808,
-    "meanScorePercent": -22.007829,
-    "lastTenCappedMeanPercent": -18.403472
+    "winRatePercent": 17.647059,
+    "meanPnlPercent": -8.327492,
+    "meanScorePercent": -17.97723,
+    "lastTenCappedMeanPercent": -9.371764
   },
   "trades": [
     {
@@ -350,13 +350,13 @@
       "name": null,
       "symbol": null,
       "botVersion": "1.0.10",
-      "status": "open",
+      "status": "closed",
       "entryMarketCapUsd": 3010.94,
-      "exitMarketCapUsd": null,
-      "pnlPercent": null,
-      "scorePercent": null,
+      "exitMarketCapUsd": 4654.12,
+      "pnlPercent": 54.573554,
+      "scorePercent": 54.573554,
       "openedAt": "2026-11-04T23:59:46.683Z",
-      "closedAt": null
+      "closedAt": "2026-11-05T00:00:00.579Z"
     }
   ]
 }
