@@ -66,6 +66,12 @@
       "version": "1.0.10",
       "registeredAt": "2026-11-04T23:25:02.755Z",
       "summary": "Fix the budget log limit blocking market data reads.",
+      "active": false
+    },
+    {
+      "version": "1.0.11",
+      "registeredAt": "2026-11-05T00:47:50.942Z",
+      "summary": "Reduce bookkeeping latency and retain creator data for trade analysis.",
       "active": true
     }
   ],
