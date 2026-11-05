@@ -84,6 +84,12 @@
       "version": "1.0.13",
       "registeredAt": "2026-11-05T09:29:46.042Z",
       "summary": "Restore live Pulse data after frontend changes and preserve final startup status.",
+      "active": false
+    },
+    {
+      "version": "1.0.14",
+      "registeredAt": "2026-11-05T10:45:08.230Z",
+      "summary": "Confirm browser cleanup after disconnects and keep active paper runs awake.",
       "active": true
     }
   ],
