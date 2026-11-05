@@ -126,6 +126,12 @@
       "version": "1.0.20",
       "registeredAt": "2026-11-05T17:38:04.939Z",
       "summary": "Measure persistent reported buying outside exact creation-role addresses at immutable pre-entry cutoffs, with buyer concentration and role-sell alerts; record a fixed shadow comparison without changin",
+      "active": false
+    },
+    {
+      "version": "1.0.21",
+      "registeredAt": "2026-11-05T18:34:47.028Z",
+      "summary": "Pilot the frozen reported-flow entry veto for at most 90 minutes and three durable reservations, preserving original counters and expiry; retry settled expired-calibration epochs within existing super",
       "active": true
     }
   ],
