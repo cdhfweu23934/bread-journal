@@ -108,6 +108,12 @@
       "version": "1.0.17",
       "registeredAt": "2026-11-05T13:48:01.195Z",
       "summary": "Record bounded candidate buy/sell observations before paper entry without changing trading decisions or adding provider requests.",
+      "active": false
+    },
+    {
+      "version": "1.0.18",
+      "registeredAt": "2026-11-05T15:11:23.502Z",
+      "summary": "Extend finite paper research headroom without resetting usage, and stop paid arming when origin capacity is exhausted.",
       "active": true
     }
   ],
