@@ -150,6 +150,12 @@
       "version": "1.0.24",
       "registeredAt": "2026-11-06T00:05:55.062Z",
       "summary": "Remove the fixed 333% take-profit exit; preserve uncapped trade returns and cap only goal-score contributions.",
+      "active": false
+    },
+    {
+      "version": "1.0.25",
+      "registeredAt": "2026-11-06T01:30:45.824Z",
+      "summary": "Confirm fresh buying before current-liquidity lookup; retain final flow and creator-inventory checks.",
       "active": true
     }
   ],
