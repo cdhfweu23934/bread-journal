@@ -180,6 +180,12 @@
       "version": "1.0.29",
       "registeredAt": "2026-11-06T09:29:52.995Z",
       "summary": "Collect original-clock Pulse post metadata during a new bounded paper run while preserving entry, exit and accounting rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.30",
+      "registeredAt": "2026-11-06T10:39:18.124Z",
+      "summary": "Preserve bounded observer rejection codes and native field shapes without changing paper admission, exits or accounting.",
       "active": true
     }
   ],
