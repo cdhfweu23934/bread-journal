@@ -246,6 +246,12 @@
       "version": "1.0.40",
       "registeredAt": "2026-11-06T19:36:45.890Z",
       "summary": "Separate held-position preparation from 350 ms physical account freshness; continue included-quota paper reads with immutable historical ledgers and bounded journal capacity.",
+      "active": false
+    },
+    {
+      "version": "1.0.41",
+      "registeredAt": "2026-11-06T22:18:01.076Z",
+      "summary": "Require owned news or observed role-sale absorption, exclude birth-linked buys, and veto authenticated prior illiquid creators; continue bounded unsigned paper research with retained history and inclu",
       "active": true
     }
   ],
