@@ -162,6 +162,12 @@
       "version": "1.0.26",
       "registeredAt": "2026-11-06T03:07:23.408Z",
       "summary": "Reject persistently failing creator-sale confirmations early; retain qualifying entry and final execution checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.27",
+      "registeredAt": "2026-11-06T04:44:11.841Z",
+      "summary": "Require fresh net buying after creator-role sales and skip unusable funding peers while preserving inventory and execution checks.",
       "active": true
     }
   ],
