@@ -216,6 +216,12 @@
       "version": "1.0.35",
       "registeredAt": "2026-11-06T13:38:26.780Z",
       "summary": "Add a distinct paper observation period of up to 24 hours with 12 new reservations; preserve the strategy, all prior plans, used quotas, fees and inventory.",
+      "active": false
+    },
+    {
+      "version": "1.0.36",
+      "registeredAt": "2026-11-06T14:57:53.537Z",
+      "summary": "Record typed canonical creator and payer roles for selected verified candidates before later entry checks; preserve all trading rules, history and quotas.",
       "active": true
     }
   ],
