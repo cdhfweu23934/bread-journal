@@ -240,6 +240,12 @@
       "version": "1.0.39",
       "registeredAt": "2026-11-06T18:06:07.785Z",
       "summary": "Evaluate a bounded 20-to-30 SOL candidate reserve band while retaining 1:1 peer funding, fixed order sizing, demand and ATA checks, quote freshness, execution delays and existing paper allowances.",
+      "active": false
+    },
+    {
+      "version": "1.0.40",
+      "registeredAt": "2026-11-06T19:36:45.890Z",
+      "summary": "Separate held-position preparation from 350 ms physical account freshness; continue included-quota paper reads with immutable historical ledgers and bounded journal capacity.",
       "active": true
     }
   ],
