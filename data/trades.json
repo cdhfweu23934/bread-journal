@@ -258,6 +258,12 @@
       "version": "1.0.42",
       "registeredAt": "2026-11-06T22:41:13.819Z",
       "summary": "Remove the automatic creator blacklist based on prior paper illiquidity; keep history descriptive while preserving owned news or observed-sale demand, birth-link, execution and accounting guards.",
+      "active": false
+    },
+    {
+      "version": "1.0.43",
+      "registeredAt": "2026-11-06T23:36:18.761Z",
+      "summary": "Handle SDK-confirmed sub-lamport Pump creator-token dust in the hypothetical sell-pressure model, preserving all token deltas and stress guards; retain precise quote rejection diagnostics.",
       "active": true
     }
   ],
