@@ -252,6 +252,12 @@
       "version": "1.0.41",
       "registeredAt": "2026-11-06T22:18:01.076Z",
       "summary": "Require owned news or observed role-sale absorption, exclude birth-linked buys, and veto authenticated prior illiquid creators; continue bounded unsigned paper research with retained history and inclu",
+      "active": false
+    },
+    {
+      "version": "1.0.42",
+      "registeredAt": "2026-11-06T22:41:13.819Z",
+      "summary": "Remove the automatic creator blacklist based on prior paper illiquidity; keep history descriptive while preserving owned news or observed-sale demand, birth-link, execution and accounting guards.",
       "active": true
     }
   ],
