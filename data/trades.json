@@ -186,6 +186,12 @@
       "version": "1.0.30",
       "registeredAt": "2026-11-06T10:39:18.124Z",
       "summary": "Preserve bounded observer rejection codes and native field shapes without changing paper admission, exits or accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.31",
+      "registeredAt": "2026-11-06T11:22:44.807Z",
+      "summary": "Continue the same paper entry and exit policy in a distinct finite period; preserve uncapped trade ROI and first-failure ingestion diagnostics.",
       "active": true
     }
   ],
