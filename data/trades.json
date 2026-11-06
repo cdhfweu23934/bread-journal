@@ -222,6 +222,12 @@
       "version": "1.0.36",
       "registeredAt": "2026-11-06T14:57:53.537Z",
       "summary": "Record typed canonical creator and payer roles for selected verified candidates before later entry checks; preserve all trading rules, history and quotas.",
+      "active": false
+    },
+    {
+      "version": "1.0.37",
+      "registeredAt": "2026-11-06T15:53:38.490Z",
+      "summary": "Capture bounded selected-candidate reported-field followups and private entry-stage timing; retire the extra collector before quote preparation.",
       "active": true
     }
   ],
