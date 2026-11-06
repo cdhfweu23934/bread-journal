@@ -156,6 +156,12 @@
       "version": "1.0.25",
       "registeredAt": "2026-11-06T01:30:45.824Z",
       "summary": "Confirm fresh buying before current-liquidity lookup; retain final flow and creator-inventory checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.26",
+      "registeredAt": "2026-11-06T03:07:23.408Z",
+      "summary": "Reject persistently failing creator-sale confirmations early; retain qualifying entry and final execution checks.",
       "active": true
     }
   ],
