@@ -228,6 +228,12 @@
       "version": "1.0.37",
       "registeredAt": "2026-11-06T15:53:38.490Z",
       "summary": "Capture bounded selected-candidate reported-field followups and private entry-stage timing; retire the extra collector before quote preparation.",
+      "active": false
+    },
+    {
+      "version": "1.0.38",
+      "registeredAt": "2026-11-06T17:32:59.206Z",
+      "summary": "Keep entry quotes fresh through local budget bookkeeping with separately bounded preparation; preserve execution delays and original deadlines, remove redundant Pump instruction reconstruction, and la",
       "active": true
     }
   ],
