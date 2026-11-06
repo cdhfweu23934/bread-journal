@@ -234,6 +234,12 @@
       "version": "1.0.38",
       "registeredAt": "2026-11-06T17:32:59.206Z",
       "summary": "Keep entry quotes fresh through local budget bookkeeping with separately bounded preparation; preserve execution delays and original deadlines, remove redundant Pump instruction reconstruction, and la",
+      "active": false
+    },
+    {
+      "version": "1.0.39",
+      "registeredAt": "2026-11-06T18:06:07.785Z",
+      "summary": "Evaluate a bounded 20-to-30 SOL candidate reserve band while retaining 1:1 peer funding, fixed order sizing, demand and ATA checks, quote freshness, execution delays and existing paper allowances.",
       "active": true
     }
   ],
