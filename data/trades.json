@@ -168,6 +168,12 @@
       "version": "1.0.27",
       "registeredAt": "2026-11-06T04:44:11.841Z",
       "summary": "Require fresh net buying after creator-role sales and skip unusable funding peers while preserving inventory and execution checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.28",
+      "registeredAt": "2026-11-06T06:47:47.165Z",
+      "summary": "Continue the post-sale absorption paper rules in a new bounded window, preserving accounting and quotas.",
       "active": true
     }
   ],
