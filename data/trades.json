@@ -192,6 +192,12 @@
       "version": "1.0.31",
       "registeredAt": "2026-11-06T11:22:44.807Z",
       "summary": "Continue the same paper entry and exit policy in a distinct finite period; preserve uncapped trade ROI and first-failure ingestion diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.32",
+      "registeredAt": "2026-11-06T11:45:08.355Z",
+      "summary": "Keep research ingestion running when a mint appears on another validated pair; preserve its first receipt, audit the skipped market, and retain strict identity checks.",
       "active": true
     }
   ],
