@@ -198,6 +198,12 @@
       "version": "1.0.32",
       "registeredAt": "2026-11-06T11:45:08.355Z",
       "summary": "Keep research ingestion running when a mint appears on another validated pair; preserve its first receipt, audit the skipped market, and retain strict identity checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.33",
+      "registeredAt": "2026-11-06T12:17:30.554Z",
+      "summary": "Start a distinct finite paper period with unchanged trading rules, preserving all earlier plans, resource use and the first-pair research repair.",
       "active": true
     }
   ],
