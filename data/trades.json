@@ -144,6 +144,12 @@
       "version": "1.0.23",
       "registeredAt": "2026-11-05T21:02:58.102Z",
       "summary": "Add current canonical creator-role ATA liquidation stress for native Pump and Bonk entries, preserve prior paper trials, and repair bounded owned clock recovery.",
+      "active": false
+    },
+    {
+      "version": "1.0.24",
+      "registeredAt": "2026-11-06T00:05:55.062Z",
+      "summary": "Remove the fixed 333% take-profit exit; preserve uncapped trade returns and cap only goal-score contributions.",
       "active": true
     }
   ],
