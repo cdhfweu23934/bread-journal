@@ -342,6 +342,12 @@
       "version": "1.0.56",
       "registeredAt": "2026-11-07T17:05:03.957Z",
       "summary": "Require three later genuine quote observations before paper entry, retaining spacing, price, demand and backing checks. Preserve all accounting and continue the next fixed paper period.",
+      "active": false
+    },
+    {
+      "version": "1.0.57",
+      "registeredAt": "2026-11-07T18:47:52.630Z",
+      "summary": "Record exact verification failures and continue paper testing in a distinct period with unchanged entry rules",
       "active": true
     }
   ],
