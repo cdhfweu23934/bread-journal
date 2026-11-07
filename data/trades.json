@@ -336,6 +336,12 @@
       "version": "1.0.55",
       "registeredAt": "2026-11-07T15:34:55.137Z",
       "summary": "Reject 50% backing drawdowns, expand native scouting to 512 candidates and collect fixed-window rejected-coin cohorts; preserve all paper history and quota counters.",
+      "active": false
+    },
+    {
+      "version": "1.0.56",
+      "registeredAt": "2026-11-07T17:05:03.957Z",
+      "summary": "Require three later genuine quote observations before paper entry, retaining spacing, price, demand and backing checks. Preserve all accounting and continue the next fixed paper period.",
       "active": true
     }
   ],
