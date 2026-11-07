@@ -312,6 +312,12 @@
       "version": "1.0.51",
       "registeredAt": "2026-11-07T11:35:17.000Z",
       "summary": "Test later native Pump/Bonk entries using repeated genuine BUY quotes and buyer-proxy growth, reserve-bounded sizing and five-minute holds; preserve delayed unsigned execution, exits, fees and all his",
+      "active": false
+    },
+    {
+      "version": "1.0.52",
+      "registeredAt": "2026-11-07T11:57:43.427Z",
+      "summary": "Handle genuine Pulse metadata maps and preserve native transport reasons before parent callbacks, restoring candidate selection and bounded reconnects without changing strategy thresholds or accountin",
       "active": true
     }
   ],
