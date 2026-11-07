@@ -306,6 +306,12 @@
       "version": "1.0.50",
       "registeredAt": "2026-11-07T09:15:25.960Z",
       "summary": "Compare 24 prospective pairs using individual genuine quote baselines, original session lifetime admission and fixed future full-size quotes; preserve unknown outcomes and financial trading rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.51",
+      "registeredAt": "2026-11-07T11:35:17.000Z",
+      "summary": "Test later native Pump/Bonk entries using repeated genuine BUY quotes and buyer-proxy growth, reserve-bounded sizing and five-minute holds; preserve delayed unsigned execution, exits, fees and all his",
       "active": true
     }
   ],
