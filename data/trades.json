@@ -348,6 +348,12 @@
       "version": "1.0.57",
       "registeredAt": "2026-11-07T18:47:52.630Z",
       "summary": "Record exact verification failures and continue paper testing in a distinct period with unchanged entry rules",
+      "active": false
+    },
+    {
+      "version": "1.0.58",
+      "registeredAt": "2026-11-07T20:07:40.772Z",
+      "summary": "Correct fresh quote acquisition to three slots, refresh demand after quotes, and recover bounded native clock interruptions while preserving shared paper capacity and history.",
       "active": true
     }
   ],
