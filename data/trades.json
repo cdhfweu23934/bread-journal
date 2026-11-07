@@ -318,6 +318,12 @@
       "version": "1.0.52",
       "registeredAt": "2026-11-07T11:57:43.427Z",
       "summary": "Handle genuine Pulse metadata maps and preserve native transport reasons before parent callbacks, restoring candidate selection and bounded reconnects without changing strategy thresholds or accountin",
+      "active": false
+    },
+    {
+      "version": "1.0.53",
+      "registeredAt": "2026-11-07T12:59:35.319Z",
+      "summary": "Restore native paper sells with sequential reserved RPC reads, omit absent terminal clock fields, fix actual quote sizing and entry timing, and retain bounded quote diagnostics while preserving losses",
       "active": true
     }
   ],
