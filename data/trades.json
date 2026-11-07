@@ -330,6 +330,12 @@
       "version": "1.0.54",
       "registeredAt": "2026-11-07T14:04:34.525Z",
       "summary": "Observe eligible native callbacks independently of trading, enforce causal five-minute research windows, and use longer deadline-bound source sessions in a distinct paper period while preserving all h",
+      "active": false
+    },
+    {
+      "version": "1.0.55",
+      "registeredAt": "2026-11-07T15:34:55.137Z",
+      "summary": "Reject 50% backing drawdowns, expand native scouting to 512 candidates and collect fixed-window rejected-coin cohorts; preserve all paper history and quota counters.",
       "active": true
     }
   ],
