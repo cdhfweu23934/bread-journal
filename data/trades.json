@@ -276,6 +276,12 @@
       "version": "1.0.45",
       "registeredAt": "2026-11-07T01:08:58.503Z",
       "summary": "Add a paper entry route requiring preserved backing in original funded markets and a newly funded related peer, while preserving existing entry routes and trade history.",
+      "active": false
+    },
+    {
+      "version": "1.0.46",
+      "registeredAt": "2026-11-07T04:50:19.273Z",
+      "summary": "Support native Pump Mayhem paper trading with canonical trade-user checks, mode-safe exits and accounting, fixed nominal market-cap reporting, and original family-ingest diagnostics.",
       "active": true
     }
   ],
