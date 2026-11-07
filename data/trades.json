@@ -324,6 +324,12 @@
       "version": "1.0.53",
       "registeredAt": "2026-11-07T12:59:35.319Z",
       "summary": "Restore native paper sells with sequential reserved RPC reads, omit absent terminal clock fields, fix actual quote sizing and entry timing, and retain bounded quote diagnostics while preserving losses",
+      "active": false
+    },
+    {
+      "version": "1.0.54",
+      "registeredAt": "2026-11-07T14:04:34.525Z",
+      "summary": "Observe eligible native callbacks independently of trading, enforce causal five-minute research windows, and use longer deadline-bound source sessions in a distinct paper period while preserving all h",
       "active": true
     }
   ],
