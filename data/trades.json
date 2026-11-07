@@ -264,6 +264,12 @@
       "version": "1.0.43",
       "registeredAt": "2026-11-06T23:36:18.761Z",
       "summary": "Handle SDK-confirmed sub-lamport Pump creator-token dust in the hypothetical sell-pressure model, preserving all token deltas and stress guards; retain precise quote rejection diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.44",
+      "registeredAt": "2026-11-07T00:06:34.537Z",
+      "summary": "Record later Axiom flow for eligible rejected controls and final entry candidates, preserving original entry evidence and limits with strict trade-context labels and separate research accounting.",
       "active": true
     }
   ],
