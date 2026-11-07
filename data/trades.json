@@ -294,6 +294,12 @@
       "version": "1.0.48",
       "registeredAt": "2026-11-07T07:08:10.575Z",
       "summary": "Track skipped Pump and Bonk pairs with finite canonical native-price measurements for runner and failure analysis.",
+      "active": false
+    },
+    {
+      "version": "1.0.49",
+      "registeredAt": "2026-11-07T08:39:18.820Z",
+      "summary": "Add a finite paired early-flow and full-size future quote study at 30, 60, 180 and 300 seconds; preserve all financial entry and exit rules.",
       "active": true
     }
   ],
