@@ -270,6 +270,12 @@
       "version": "1.0.44",
       "registeredAt": "2026-11-07T00:06:34.537Z",
       "summary": "Record later Axiom flow for eligible rejected controls and final entry candidates, preserving original entry evidence and limits with strict trade-context labels and separate research accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.45",
+      "registeredAt": "2026-11-07T01:08:58.503Z",
+      "summary": "Add a paper entry route requiring preserved backing in original funded markets and a newly funded related peer, while preserving existing entry routes and trade history.",
       "active": true
     }
   ],
