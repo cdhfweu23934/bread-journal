@@ -354,6 +354,12 @@
       "version": "1.0.58",
       "registeredAt": "2026-11-07T20:07:40.772Z",
       "summary": "Correct fresh quote acquisition to three slots, refresh demand after quotes, and recover bounded native clock interruptions while preserving shared paper capacity and history.",
+      "active": false
+    },
+    {
+      "version": "1.0.59",
+      "registeredAt": "2026-11-07T22:13:40.024Z",
+      "summary": "Repair native entry freshness using coacquired reserves and a fresh execution quote after durable reservation; start the next paper period while retaining history and counters.",
       "active": true
     }
   ],
