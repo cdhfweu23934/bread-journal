@@ -420,6 +420,12 @@
       "version": "1.0.69",
       "registeredAt": "2026-11-08T11:13:00.990Z",
       "summary": "Reduce entry quote bookkeeping by reserving two sequential RPC reads together while preserving per-read charges, freshness and execution checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.70",
+      "registeredAt": "2026-11-08T13:54:07.381Z",
+      "summary": "Exclude Mayhem entries; preserve paired liquidity and processing minimum; use continuous budget lease and cumulative local metadata",
       "active": true
     }
   ],
