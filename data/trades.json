@@ -396,6 +396,12 @@
       "version": "1.0.65",
       "registeredAt": "2026-11-08T07:20:30.626Z",
       "summary": "Remove duplicate budget-ledger reads while preserving fresh per-request durable acknowledgment and exit reserve checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.66",
+      "registeredAt": "2026-11-08T08:17:05.074Z",
+      "summary": "Track three background and nine financially selected native pair outcomes per cohort, with separate 25-second features and fresh 180-second labels; preserve entry rules and Helius quota.",
       "active": true
     }
   ],
