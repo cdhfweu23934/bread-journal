@@ -384,6 +384,12 @@
       "version": "1.0.63",
       "registeredAt": "2026-11-08T05:02:31.577Z",
       "summary": "Remove redundant native idle budget ledger reads while retaining fresh request and pre-entry checks; recover clean slow-calibration stops with a new clock epoch and add failure-stage quote diagnostics",
+      "active": false
+    },
+    {
+      "version": "1.0.64",
+      "registeredAt": "2026-11-08T06:11:26.262Z",
+      "summary": "Share one fresh authenticated budget read between native quota preflight and reservation while preserving durable acknowledgment and exit reserves.",
       "active": true
     }
   ],
