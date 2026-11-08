@@ -390,6 +390,12 @@
       "version": "1.0.64",
       "registeredAt": "2026-11-08T06:11:26.262Z",
       "summary": "Share one fresh authenticated budget read between native quota preflight and reservation while preserving durable acknowledgment and exit reserves.",
+      "active": false
+    },
+    {
+      "version": "1.0.65",
+      "registeredAt": "2026-11-08T07:20:30.626Z",
+      "summary": "Remove duplicate budget-ledger reads while preserving fresh per-request durable acknowledgment and exit reserve checks.",
       "active": true
     }
   ],
