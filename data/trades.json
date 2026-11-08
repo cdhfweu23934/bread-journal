@@ -372,6 +372,12 @@
       "version": "1.0.61",
       "registeredAt": "2026-11-08T01:55:54.929Z",
       "summary": "Reduce paper data-budget bookkeeping latency while preserving authenticated accounting; record every owned native admission outcome. Entry and exit rules unchanged.",
+      "active": false
+    },
+    {
+      "version": "1.0.62",
+      "registeredAt": "2026-11-08T03:47:16.990Z",
+      "summary": "Fix premature candidate retirement by allowing both reserve observations across the existing confirmation path. Preserve drawdown, freshness, entry and exit rules.",
       "active": true
     }
   ],
