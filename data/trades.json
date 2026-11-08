@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T15:25:15.491Z",
+  "updatedAt": "2026-11-08T15:25:18.218Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -426,12 +426,18 @@
       "version": "1.0.70",
       "registeredAt": "2026-11-08T13:54:07.381Z",
       "summary": "Exclude Mayhem entries; preserve paired liquidity and processing minimum; use continuous budget lease and cumulative local metadata",
+      "active": false
+    },
+    {
+      "version": "1.0.71",
+      "registeredAt": "2026-11-08T19:07:00.303Z",
+      "summary": "Refuse new writeoffs from known mixed public-pool and virtual-inventory state; retain tokens and costs without scoring a simulated total loss.",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-08T15:25:15.491Z",
+    "asOf": "2026-11-08T15:25:18.218Z",
     "botVersion": "1.0.70",
     "closed": 45,
     "unresolved": 0,
