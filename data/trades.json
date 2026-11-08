@@ -414,6 +414,12 @@
       "version": "1.0.68",
       "registeredAt": "2026-11-08T10:14:37.006Z",
       "summary": "Retain bounded original Pump quote reserves and selected fee arithmetic through existing research callbacks, preserving canonical quote and trade behavior.",
+      "active": false
+    },
+    {
+      "version": "1.0.69",
+      "registeredAt": "2026-11-08T11:13:00.990Z",
+      "summary": "Reduce entry quote bookkeeping by reserving two sequential RPC reads together while preserving per-read charges, freshness and execution checks.",
       "active": true
     }
   ],
