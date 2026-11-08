@@ -378,6 +378,12 @@
       "version": "1.0.62",
       "registeredAt": "2026-11-08T03:47:16.990Z",
       "summary": "Fix premature candidate retirement by allowing both reserve observations across the existing confirmation path. Preserve drawdown, freshness, entry and exit rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.63",
+      "registeredAt": "2026-11-08T05:02:31.577Z",
+      "summary": "Remove redundant native idle budget ledger reads while retaining fresh request and pre-entry checks; recover clean slow-calibration stops with a new clock epoch and add failure-stage quote diagnostics",
       "active": true
     }
   ],
