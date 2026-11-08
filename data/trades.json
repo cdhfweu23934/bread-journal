@@ -402,6 +402,12 @@
       "version": "1.0.66",
       "registeredAt": "2026-11-08T08:17:05.074Z",
       "summary": "Track three background and nine financially selected native pair outcomes per cohort, with separate 25-second features and fresh 180-second labels; preserve entry rules and Helius quota.",
+      "active": false
+    },
+    {
+      "version": "1.0.67",
+      "registeredAt": "2026-11-08T09:10:38.024Z",
+      "summary": "Retry one settled empty creation receipt for the same signature using the original fresh clock, two-lookup cap and 5.5-second window; retain bounded origin acquisition diagnostics.",
       "active": true
     }
   ],
