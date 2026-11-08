@@ -360,6 +360,12 @@
       "version": "1.0.59",
       "registeredAt": "2026-11-07T22:13:40.024Z",
       "summary": "Repair native entry freshness using coacquired reserves and a fresh execution quote after durable reservation; start the next paper period while retaining history and counters.",
+      "active": false
+    },
+    {
+      "version": "1.0.60",
+      "registeredAt": "2026-11-08T00:00:18.094Z",
+      "summary": "Count owned preparation after a saved reservation toward minimum entry latency; retain legacy delays and 400ms inclusion; extend paper testing within the existing quota.",
       "active": true
     }
   ],
