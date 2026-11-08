@@ -11,6 +11,7 @@
   const shortMint = mint => mint.slice(0, 5) + '…' + mint.slice(-5);
   const date = (value, full=false) => value ? new Intl.DateTimeFormat('en-GB', {day:'2-digit',month:'short',...(full?{year:'numeric'}:{}),hour:'2-digit',minute:'2-digit',timeZone:'UTC'}).format(new Date(value)) + (full?' UTC':'') : '—';
   const tokenName = trade => trade.symbol || trade.name || shortMint(trade.mint);
+  const axiomLink = trade => `<a class="axiom-link" href="https://axiom.trade/t/${encodeURIComponent(trade.mint)}?chain=sol" target="_blank" rel="noopener noreferrer" aria-label="Open ${escape(tokenName(trade))} in Axiom (new tab)">Open in Axiom ${icons('arrow')}</a>`;
   const statusLabel = status => status === 'written_off' ? 'Written off' : status[0].toUpperCase() + status.slice(1);
   function scoreSummary(trades) {
     const terminal=trades.filter(t=>t.status==='closed'||t.status==='written_off');
@@ -161,7 +162,7 @@
   function renderRows() {
     if(!state.data)return;const trades=visibleTrades(),pages=Math.max(1,Math.ceil(trades.length/state.pageSize));state.page=Math.min(state.page,pages);
     const offset=(state.page-1)*state.pageSize,rows=trades.slice(offset,offset+state.pageSize);
-    $('trade-rows').innerHTML=rows.map(t=>`<tr data-trade-id="${escape(t.id)}"><td><button class="token-trigger" data-trade-id="${escape(t.id)}"><span class="token-avatar" aria-hidden="true">${escape((t.symbol||t.name||t.mint).slice(0,1).toUpperCase())}</span><span><span class="token-title">${escape(tokenName(t))}${t.symbol&&t.name?`<span class="token-ticker">${escape(t.name)}</span>`:''}</span><span class="token-ca">${escape(shortMint(t.mint))}</span><span class="trade-version">${t.botVersion?"v"+escape(t.botVersion):"Before versioning"}</span></span></button></td><td><span class="status ${t.status}">${statusLabel(t.status)}</span>${t.status==='written_off'?'<small class="status-detail">Tokens retained</small>':''}</td><td class="numeric">${price(t.entryMarketCapUsd)}</td><td class="numeric">${price(t.exitMarketCapUsd)}</td><td class="numeric pnl-cell ${pnlClass(t.pnlPercent)}">${percent(t.pnlPercent)}${t.status==='written_off'?`<small class="writeoff-score negative">Score ${percent(t.scorePercent)}</small>`:''}</td><td class="recorded-cell">${date(t.closedAt||t.openedAt)}</td><td><svg class="icon row-arrow"><use href="#i-chevron"/></svg></td></tr>`).join('');
+    $('trade-rows').innerHTML=rows.map(t=>`<tr data-trade-id="${escape(t.id)}"><td><button class="token-trigger" data-trade-id="${escape(t.id)}"><span class="token-avatar" aria-hidden="true">${escape((t.symbol||t.name||t.mint).slice(0,1).toUpperCase())}</span><span><span class="token-title">${escape(tokenName(t))}${t.symbol&&t.name?`<span class="token-ticker">${escape(t.name)}</span>`:''}</span><span class="token-ca">${escape(shortMint(t.mint))}</span><span class="trade-version">${t.botVersion?"v"+escape(t.botVersion):"Before versioning"}</span></span></button></td><td><span class="status ${t.status}">${statusLabel(t.status)}</span>${t.status==='written_off'?'<small class="status-detail">Tokens retained</small>':''}</td><td class="numeric">${price(t.entryMarketCapUsd)}</td><td class="numeric">${price(t.exitMarketCapUsd)}</td><td class="numeric pnl-cell ${pnlClass(t.pnlPercent)}">${percent(t.pnlPercent)}${t.status==='written_off'?`<small class="writeoff-score negative">Score ${percent(t.scorePercent)}</small>`:''}</td><td class="recorded-cell">${date(t.closedAt||t.openedAt)}</td><td><div class="trade-actions">${axiomLink(t)}<button class="icon-button trade-details" data-trade-id="${escape(t.id)}" aria-label="View ${escape(tokenName(t))} details">${icons('chevron')}</button></div></td></tr>`).join('');
     $('ledger-empty').hidden=trades.length!==0;$('empty-description').textContent=state.data.trades.length?'Try a different contract address or status.':'No trades have been included in this export yet.';
     $('clear-filters').hidden=!state.query&&state.filter==='all'&&state.version==='all';
     $('page-summary').textContent=trades.length?`${offset+1}–${Math.min(offset+state.pageSize,trades.length)} of ${trades.length} trades`:'0 trades';
@@ -182,6 +183,7 @@
     $('drawer-content').querySelector('.drawer-caps').after(mcNote);
     const version=document.createElement('p');version.className='drawer-version';version.textContent='Bot at entry: '+(trade.botVersion?'v'+trade.botVersion:'Before versioning');$('drawer-content').append(version);
     $('copy-ca').addEventListener('click',()=>copy(trade.mint));
+    const actions=document.createElement('div');actions.className='drawer-actions';actions.innerHTML=axiomLink(trade);$('drawer-content').querySelector('.drawer-ca').after(actions);
   }
   function openDrawer(id) {
     const trade=state.data?.trades.find(t=>t.id===id);if(!trade)return;priorFocus=document.activeElement;state.drawerId=id;renderDrawer(trade);
@@ -213,7 +215,7 @@
   $('previous-page').addEventListener('click',()=>{state.page--;renderRows();});$('next-page').addEventListener('click',()=>{state.page++;renderRows();});
   $('clear-filters').addEventListener('click',()=>{state.query='';state.filter='all';state.version='all';state.page=1;$('search').value='';render();});
   $('version-filter').addEventListener('change',()=>{state.version=$('version-filter').value;state.page=1;render();});
-  $('trade-rows').addEventListener('click',event=>{const row=event.target.closest('[data-trade-id]');if(row)openDrawer(row.dataset.tradeId);});
+  $('trade-rows').addEventListener('click',event=>{if(event.target.closest('a'))return;const row=event.target.closest('[data-trade-id]');if(row)openDrawer(row.dataset.tradeId);});
   $('close-drawer').addEventListener('click',()=>closeDrawer());$('drawer-backdrop').addEventListener('click',()=>closeDrawer());
   $('performance-chart').addEventListener('mouseover',event=>{if(event.target.matches('[data-index]'))chartTooltip(event.target);});
   $('performance-chart').addEventListener('focusin',event=>{if(event.target.matches('[data-index]'))chartTooltip(event.target);});
