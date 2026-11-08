@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T11:59:33.254Z",
+  "updatedAt": "2026-11-08T13:55:29.864Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -430,9 +430,9 @@
     }
   ],
   "live": {
-    "state": "stopped",
-    "asOf": "2026-11-08T11:59:33.254Z",
-    "botVersion": "1.0.69",
+    "state": "running",
+    "asOf": "2026-11-08T13:55:29.864Z",
+    "botVersion": "1.0.70",
     "closed": 44,
     "unresolved": 0,
     "open": 0
