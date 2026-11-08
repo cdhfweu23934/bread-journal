@@ -408,6 +408,12 @@
       "version": "1.0.67",
       "registeredAt": "2026-11-08T09:10:38.024Z",
       "summary": "Retry one settled empty creation receipt for the same signature using the original fresh clock, two-lookup cap and 5.5-second window; retain bounded origin acquisition diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.68",
+      "registeredAt": "2026-11-08T10:14:37.006Z",
+      "summary": "Retain bounded original Pump quote reserves and selected fee arithmetic through existing research callbacks, preserving canonical quote and trade behavior.",
       "active": true
     }
   ],
