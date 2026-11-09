@@ -522,6 +522,12 @@
       "version": "1.0.86",
       "registeredAt": "2026-11-09T19:17:59.156Z",
       "summary": "Screen up to three original native candidates with deadline-aware serial work. Preserve all buy conditions and one pending entry/position; pin the committed winner and close competing watches before f",
+      "active": false
+    },
+    {
+      "version": "1.0.87",
+      "registeredAt": "2026-11-09T19:48:14.795Z",
+      "summary": "Preserve stopped paper custody after a rejected preparation counted as an attempt but issued no native wire. Require zero fees/executions, the exact original VM journal, unchanged inventory and full s",
       "active": true
     }
   ],
