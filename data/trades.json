@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T22:18:45.914Z",
+  "updatedAt": "2026-11-09T22:20:39.361Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -564,13 +564,19 @@
       "version": "1.0.93",
       "registeredAt": "2026-11-09T21:46:18.329Z",
       "summary": "Require fresh Axiom holder-risk data before paper entries; reject reported bundled or insider holdings and missing data, retain delayed live prices and restore the fixed five-minute exit.",
+      "active": false
+    },
+    {
+      "version": "1.0.94",
+      "registeredAt": "2026-11-09T22:20:24.750Z",
+      "summary": "Screen reported ownership after the first reference to reject bundled launches earlier; preserve reference deadlines and require a fresh final ownership pass before every paper entry.",
       "active": true
     }
   ],
   "live": {
-    "state": "stopped",
-    "asOf": "2026-11-09T22:18:45.914Z",
-    "botVersion": "1.0.93",
+    "state": "running",
+    "asOf": "2026-11-09T22:20:39.361Z",
+    "botVersion": "1.0.94",
     "closed": 48,
     "unresolved": 0,
     "open": 0
