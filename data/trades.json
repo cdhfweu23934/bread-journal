@@ -474,6 +474,12 @@
       "version": "1.0.78",
       "registeredAt": "2026-11-09T16:36:17.252Z",
       "summary": "Fix the subscription-ACK queue race during paper-market startup and restore fully settled zero-effect multi-phase runs without changing custody, outcomes or budgets; keep the spaced-quote entry strate",
+      "active": false
+    },
+    {
+      "version": "1.0.79",
+      "registeredAt": "2026-11-09T16:47:33.246Z",
+      "summary": "Compare matching wire transactions across feeds using equivalent empty balance and reward representations; keep amounts, fees, owners, logs and raw evidence strict. Preserve the existing entry strateg",
       "active": true
     }
   ],
