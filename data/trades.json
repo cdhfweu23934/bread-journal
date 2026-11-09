@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T17:27:54.469Z",
+  "updatedAt": "2026-11-09T17:27:58.178Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -492,12 +492,18 @@
       "version": "1.0.81",
       "registeredAt": "2026-11-09T17:19:56.185Z",
       "summary": "Wait briefly for already-received feed writes to settle before full precut reconciliation; preserve all completeness checks, raw records, strategy and prior accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.82",
+      "registeredAt": "2026-11-09T17:55:21.714Z",
+      "summary": "Handle the observed feed burst within the unchanged byte and budget bounds; retire closed incomplete transports without refunds or source-completeness claims, and preserve custody through recovery. St",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-09T17:27:54.469Z",
+    "asOf": "2026-11-09T17:27:58.178Z",
     "botVersion": "1.0.81",
     "closed": 45,
     "unresolved": 0,
