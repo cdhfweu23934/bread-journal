@@ -450,6 +450,12 @@
       "version": "1.0.74",
       "registeredAt": "2026-11-09T15:43:18.953Z",
       "summary": "Reject paper entries when net buy flow weakens during preparation or revalidation; handle v1 feed data and no-effect source failures. Native v1 execution remains unavailable.",
+      "active": false
+    },
+    {
+      "version": "1.0.75",
+      "registeredAt": "2026-11-09T15:50:17.429Z",
+      "summary": "Remove the net-deterioration entry veto after broader history exposed a blocked 204% winner; retain positive-net waiting, Mayhem exclusion and existing exits.",
       "active": true
     }
   ],
