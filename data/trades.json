@@ -504,6 +504,12 @@
       "version": "1.0.83",
       "registeredAt": "2026-11-09T18:14:48.049Z",
       "summary": "Request the actual confirmed snapshot at or beyond the processed fence. Clean early confirmation timeouts reject one candidate after closure; source integrity and cleanup failures remain fatal. Strate",
+      "active": false
+    },
+    {
+      "version": "1.0.84",
+      "registeredAt": "2026-11-09T18:23:34.057Z",
+      "summary": "Resume clean paper sessions that ended before tracking a coin. Preserve funds, fees and history while validating up to 128 parent sessions with all cycle, custody and source-closure checks retained. S",
       "active": true
     }
   ],
