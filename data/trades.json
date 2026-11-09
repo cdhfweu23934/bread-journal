@@ -432,6 +432,12 @@
       "version": "1.0.71",
       "registeredAt": "2026-11-08T19:07:00.303Z",
       "summary": "Refuse new writeoffs from known mixed public-pool and virtual-inventory state; retain tokens and costs without scoring a simulated total loss.",
+      "active": false
+    },
+    {
+      "version": "1.0.72",
+      "registeredAt": "2026-11-09T14:35:19.251Z",
+      "summary": "Wait for positive birth-filtered reported spending before paper entries; add a 20% peak / 5% fade exit with higher trailing stops and uncapped PnL.",
       "active": true
     }
   ],
