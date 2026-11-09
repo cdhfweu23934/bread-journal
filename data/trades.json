@@ -558,6 +558,12 @@
       "version": "1.0.92",
       "registeredAt": "2026-11-09T20:57:58.339Z",
       "summary": "Reject explicitly reported bundled multi-buy transactions in paper entries; preserve ordinary candidates and retry transient Windows status-file sharing conflicts.",
+      "active": false
+    },
+    {
+      "version": "1.0.93",
+      "registeredAt": "2026-11-09T21:46:18.329Z",
+      "summary": "Require fresh Axiom holder-risk data before paper entries; reject reported bundled or insider holdings and missing data, retain delayed live prices and restore the fixed five-minute exit.",
       "active": true
     }
   ],
