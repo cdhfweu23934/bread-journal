@@ -462,6 +462,12 @@
       "version": "1.0.76",
       "registeredAt": "2026-11-09T16:00:59.888Z",
       "summary": "Wait until both the prior spaced quote and latest quote hold the existing 50% rise above reference; keep latest rising, three-quote minimum and positive-net demand. One-quote spikes keep waiting.",
+      "active": false
+    },
+    {
+      "version": "1.0.77",
+      "registeredAt": "2026-11-09T16:17:22.052Z",
+      "summary": "Restore accurate v1 unsigned native simulation with pinned upstream LiteSVM 0.18.1 and original-wire handling; retain the spaced-quote entry strategy and all existing history, custody and budget count",
       "active": true
     }
   ],
