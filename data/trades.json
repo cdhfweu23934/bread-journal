@@ -540,6 +540,12 @@
       "version": "1.0.89",
       "registeredAt": "2026-11-09T20:24:30.930Z",
       "summary": "Preserve archived orphan records across paper-call status writes and restarts without restoring wallet simulation.",
+      "active": false
+    },
+    {
+      "version": "1.0.90",
+      "registeredAt": "2026-11-09T20:32:13.954Z",
+      "summary": "Record the fresh delayed paper-call entry price after signal qualification; retain price-deviation and rug checks without demanding another rising confirmation.",
       "active": true
     }
   ],
