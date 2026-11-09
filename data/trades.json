@@ -552,6 +552,12 @@
       "version": "1.0.91",
       "registeredAt": "2026-11-09T20:48:38.386Z",
       "summary": "Let trailing-protected paper winners run while making new highs; close stalled winners after five minutes without a new high, retain flat-trade timeout, and record entry context and price paths.",
+      "active": false
+    },
+    {
+      "version": "1.0.92",
+      "registeredAt": "2026-11-09T20:57:58.339Z",
+      "summary": "Reject explicitly reported bundled multi-buy transactions in paper entries; preserve ordinary candidates and retry transient Windows status-file sharing conflicts.",
       "active": true
     }
   ],
