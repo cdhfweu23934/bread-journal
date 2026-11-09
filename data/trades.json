@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04T13:02:19.613Z",
+  "updatedAt": "2026-11-09T20:24:15.200Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -12,30 +12,552 @@
       "version": "1.0.1",
       "registeredAt": "2026-11-04T15:25:34.531Z",
       "summary": "Preserve illiquid paper inventory, score write-offs honestly, and stamp trade versions.",
+      "active": false
+    },
+    {
+      "version": "1.0.2",
+      "registeredAt": "2026-11-04T16:01:50.761Z",
+      "summary": "Restore recovered paper trades while preserving their original entry times and versions.",
+      "active": false
+    },
+    {
+      "version": "1.0.3",
+      "registeredAt": "2026-11-04T16:24:51.236Z",
+      "summary": "Support Axiom's updated public new-pair feed.",
+      "active": false
+    },
+    {
+      "version": "1.0.4",
+      "registeredAt": "2026-11-04T16:59:37.943Z",
+      "summary": "Bound repeated exit checks and keep data usage current.",
+      "active": false
+    },
+    {
+      "version": "1.0.5",
+      "registeredAt": "2026-11-04T17:53:05.352Z",
+      "summary": "Retain public pool state when an exit quote lacks liquidity.",
+      "active": false
+    },
+    {
+      "version": "1.0.6",
+      "registeredAt": "2026-11-04T18:35:57.117Z",
+      "summary": "Support native holder-reward launches with verified fees and exits.",
+      "active": false
+    },
+    {
+      "version": "1.0.7",
+      "registeredAt": "2026-11-04T19:01:24.149Z",
+      "summary": "Handle larger token families and retain rejection details.",
+      "active": false
+    },
+    {
+      "version": "1.0.8",
+      "registeredAt": "2026-11-04T20:44:33.846Z",
+      "summary": "Track extension changes in bot versions.",
+      "active": false
+    },
+    {
+      "version": "1.0.9",
+      "registeredAt": "2026-11-04T22:57:26.403Z",
+      "summary": "Expand family research within the existing quota.",
+      "active": false
+    },
+    {
+      "version": "1.0.10",
+      "registeredAt": "2026-11-04T23:25:02.755Z",
+      "summary": "Fix the budget log limit blocking market data reads.",
+      "active": false
+    },
+    {
+      "version": "1.0.11",
+      "registeredAt": "2026-11-05T00:47:50.942Z",
+      "summary": "Reduce bookkeeping latency and retain creator data for trade analysis.",
+      "active": false
+    },
+    {
+      "version": "1.0.12",
+      "registeredAt": "2026-11-05T08:46:49.399Z",
+      "summary": "Recover paper trading after a verified browser session replacement.",
+      "active": false
+    },
+    {
+      "version": "1.0.13",
+      "registeredAt": "2026-11-05T09:29:46.042Z",
+      "summary": "Restore live Pulse data after frontend changes and preserve final startup status.",
+      "active": false
+    },
+    {
+      "version": "1.0.14",
+      "registeredAt": "2026-11-05T10:45:08.230Z",
+      "summary": "Confirm browser cleanup after disconnects and keep active paper runs awake.",
+      "active": false
+    },
+    {
+      "version": "1.0.15",
+      "registeredAt": "2026-11-05T11:30:09.186Z",
+      "summary": "Retain bounded public pair metadata before strategy selection for prospective developer research.",
+      "active": false
+    },
+    {
+      "version": "1.0.16",
+      "registeredAt": "2026-11-05T12:47:32.755Z",
+      "summary": "Continue paper research with included quota while preserving prior usage and restart safeguards.",
+      "active": false
+    },
+    {
+      "version": "1.0.17",
+      "registeredAt": "2026-11-05T13:48:01.195Z",
+      "summary": "Record bounded candidate buy/sell observations before paper entry without changing trading decisions or adding provider requests.",
+      "active": false
+    },
+    {
+      "version": "1.0.18",
+      "registeredAt": "2026-11-05T15:11:23.502Z",
+      "summary": "Extend finite paper research headroom without resetting usage, and stop paid arming when origin capacity is exhausted.",
+      "active": false
+    },
+    {
+      "version": "1.0.19",
+      "registeredAt": "2026-11-05T16:27:41.063Z",
+      "summary": "Reconcile terminal held paper inventory with three fresh bounded reads, durable canonical illiquidity proof and authenticated accounting cutover; preserve unsupported outcomes and all losses, fees, in",
+      "active": false
+    },
+    {
+      "version": "1.0.20",
+      "registeredAt": "2026-11-05T17:38:04.939Z",
+      "summary": "Measure persistent reported buying outside exact creation-role addresses at immutable pre-entry cutoffs, with buyer concentration and role-sell alerts; record a fixed shadow comparison without changin",
+      "active": false
+    },
+    {
+      "version": "1.0.21",
+      "registeredAt": "2026-11-05T18:34:47.028Z",
+      "summary": "Pilot the frozen reported-flow entry veto for at most 90 minutes and three durable reservations, preserving original counters and expiry; retry settled expired-calibration epochs within existing super",
+      "active": false
+    },
+    {
+      "version": "1.0.22",
+      "registeredAt": "2026-11-05T19:15:46.578Z",
+      "summary": "Raise only the finite flow pilot to 16 sequential observations under unchanged callback and byte caps, and identify the canonical participant behind closed-curve failures; preserve the original pilot ",
+      "active": false
+    },
+    {
+      "version": "1.0.23",
+      "registeredAt": "2026-11-05T21:02:58.102Z",
+      "summary": "Add current canonical creator-role ATA liquidation stress for native Pump and Bonk entries, preserve prior paper trials, and repair bounded owned clock recovery.",
+      "active": false
+    },
+    {
+      "version": "1.0.24",
+      "registeredAt": "2026-11-06T00:05:55.062Z",
+      "summary": "Remove the fixed 333% take-profit exit; preserve uncapped trade returns and cap only goal-score contributions.",
+      "active": false
+    },
+    {
+      "version": "1.0.25",
+      "registeredAt": "2026-11-06T01:30:45.824Z",
+      "summary": "Confirm fresh buying before current-liquidity lookup; retain final flow and creator-inventory checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.26",
+      "registeredAt": "2026-11-06T03:07:23.408Z",
+      "summary": "Reject persistently failing creator-sale confirmations early; retain qualifying entry and final execution checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.27",
+      "registeredAt": "2026-11-06T04:44:11.841Z",
+      "summary": "Require fresh net buying after creator-role sales and skip unusable funding peers while preserving inventory and execution checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.28",
+      "registeredAt": "2026-11-06T06:47:47.165Z",
+      "summary": "Continue the post-sale absorption paper rules in a new bounded window, preserving accounting and quotas.",
+      "active": false
+    },
+    {
+      "version": "1.0.29",
+      "registeredAt": "2026-11-06T09:29:52.995Z",
+      "summary": "Collect original-clock Pulse post metadata during a new bounded paper run while preserving entry, exit and accounting rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.30",
+      "registeredAt": "2026-11-06T10:39:18.124Z",
+      "summary": "Preserve bounded observer rejection codes and native field shapes without changing paper admission, exits or accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.31",
+      "registeredAt": "2026-11-06T11:22:44.807Z",
+      "summary": "Continue the same paper entry and exit policy in a distinct finite period; preserve uncapped trade ROI and first-failure ingestion diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.32",
+      "registeredAt": "2026-11-06T11:45:08.355Z",
+      "summary": "Keep research ingestion running when a mint appears on another validated pair; preserve its first receipt, audit the skipped market, and retain strict identity checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.33",
+      "registeredAt": "2026-11-06T12:17:30.554Z",
+      "summary": "Start a distinct finite paper period with unchanged trading rules, preserving all earlier plans, resource use and the first-pair research repair.",
+      "active": false
+    },
+    {
+      "version": "1.0.34",
+      "registeredAt": "2026-11-06T12:57:57.610Z",
+      "summary": "Check a third distinct later launch per funded E028 theme after early candidates fail confirmation; retain all financial gates, global quotas and prior accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.35",
+      "registeredAt": "2026-11-06T13:38:26.780Z",
+      "summary": "Add a distinct paper observation period of up to 24 hours with 12 new reservations; preserve the strategy, all prior plans, used quotas, fees and inventory.",
+      "active": false
+    },
+    {
+      "version": "1.0.36",
+      "registeredAt": "2026-11-06T14:57:53.537Z",
+      "summary": "Record typed canonical creator and payer roles for selected verified candidates before later entry checks; preserve all trading rules, history and quotas.",
+      "active": false
+    },
+    {
+      "version": "1.0.37",
+      "registeredAt": "2026-11-06T15:53:38.490Z",
+      "summary": "Capture bounded selected-candidate reported-field followups and private entry-stage timing; retire the extra collector before quote preparation.",
+      "active": false
+    },
+    {
+      "version": "1.0.38",
+      "registeredAt": "2026-11-06T17:32:59.206Z",
+      "summary": "Keep entry quotes fresh through local budget bookkeeping with separately bounded preparation; preserve execution delays and original deadlines, remove redundant Pump instruction reconstruction, and la",
+      "active": false
+    },
+    {
+      "version": "1.0.39",
+      "registeredAt": "2026-11-06T18:06:07.785Z",
+      "summary": "Evaluate a bounded 20-to-30 SOL candidate reserve band while retaining 1:1 peer funding, fixed order sizing, demand and ATA checks, quote freshness, execution delays and existing paper allowances.",
+      "active": false
+    },
+    {
+      "version": "1.0.40",
+      "registeredAt": "2026-11-06T19:36:45.890Z",
+      "summary": "Separate held-position preparation from 350 ms physical account freshness; continue included-quota paper reads with immutable historical ledgers and bounded journal capacity.",
+      "active": false
+    },
+    {
+      "version": "1.0.41",
+      "registeredAt": "2026-11-06T22:18:01.076Z",
+      "summary": "Require owned news or observed role-sale absorption, exclude birth-linked buys, and veto authenticated prior illiquid creators; continue bounded unsigned paper research with retained history and inclu",
+      "active": false
+    },
+    {
+      "version": "1.0.42",
+      "registeredAt": "2026-11-06T22:41:13.819Z",
+      "summary": "Remove the automatic creator blacklist based on prior paper illiquidity; keep history descriptive while preserving owned news or observed-sale demand, birth-link, execution and accounting guards.",
+      "active": false
+    },
+    {
+      "version": "1.0.43",
+      "registeredAt": "2026-11-06T23:36:18.761Z",
+      "summary": "Handle SDK-confirmed sub-lamport Pump creator-token dust in the hypothetical sell-pressure model, preserving all token deltas and stress guards; retain precise quote rejection diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.44",
+      "registeredAt": "2026-11-07T00:06:34.537Z",
+      "summary": "Record later Axiom flow for eligible rejected controls and final entry candidates, preserving original entry evidence and limits with strict trade-context labels and separate research accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.45",
+      "registeredAt": "2026-11-07T01:08:58.503Z",
+      "summary": "Add a paper entry route requiring preserved backing in original funded markets and a newly funded related peer, while preserving existing entry routes and trade history.",
+      "active": false
+    },
+    {
+      "version": "1.0.46",
+      "registeredAt": "2026-11-07T04:50:19.273Z",
+      "summary": "Support native Pump Mayhem paper trading with canonical trade-user checks, mode-safe exits and accounting, fixed nominal market-cap reporting, and original family-ingest diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.47",
+      "registeredAt": "2026-11-07T05:46:34.553Z",
+      "summary": "Repair paper verifier and metadata cleanup, recover validated clock-query races, and authenticate one restart from the retained failed run.",
+      "active": false
+    },
+    {
+      "version": "1.0.48",
+      "registeredAt": "2026-11-07T07:08:10.575Z",
+      "summary": "Track skipped Pump and Bonk pairs with finite canonical native-price measurements for runner and failure analysis.",
+      "active": false
+    },
+    {
+      "version": "1.0.49",
+      "registeredAt": "2026-11-07T08:39:18.820Z",
+      "summary": "Add a finite paired early-flow and full-size future quote study at 30, 60, 180 and 300 seconds; preserve all financial entry and exit rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.50",
+      "registeredAt": "2026-11-07T09:15:25.960Z",
+      "summary": "Compare 24 prospective pairs using individual genuine quote baselines, original session lifetime admission and fixed future full-size quotes; preserve unknown outcomes and financial trading rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.51",
+      "registeredAt": "2026-11-07T11:35:17.000Z",
+      "summary": "Test later native Pump/Bonk entries using repeated genuine BUY quotes and buyer-proxy growth, reserve-bounded sizing and five-minute holds; preserve delayed unsigned execution, exits, fees and all his",
+      "active": false
+    },
+    {
+      "version": "1.0.52",
+      "registeredAt": "2026-11-07T11:57:43.427Z",
+      "summary": "Handle genuine Pulse metadata maps and preserve native transport reasons before parent callbacks, restoring candidate selection and bounded reconnects without changing strategy thresholds or accountin",
+      "active": false
+    },
+    {
+      "version": "1.0.53",
+      "registeredAt": "2026-11-07T12:59:35.319Z",
+      "summary": "Restore native paper sells with sequential reserved RPC reads, omit absent terminal clock fields, fix actual quote sizing and entry timing, and retain bounded quote diagnostics while preserving losses",
+      "active": false
+    },
+    {
+      "version": "1.0.54",
+      "registeredAt": "2026-11-07T14:04:34.525Z",
+      "summary": "Observe eligible native callbacks independently of trading, enforce causal five-minute research windows, and use longer deadline-bound source sessions in a distinct paper period while preserving all h",
+      "active": false
+    },
+    {
+      "version": "1.0.55",
+      "registeredAt": "2026-11-07T15:34:55.137Z",
+      "summary": "Reject 50% backing drawdowns, expand native scouting to 512 candidates and collect fixed-window rejected-coin cohorts; preserve all paper history and quota counters.",
+      "active": false
+    },
+    {
+      "version": "1.0.56",
+      "registeredAt": "2026-11-07T17:05:03.957Z",
+      "summary": "Require three later genuine quote observations before paper entry, retaining spacing, price, demand and backing checks. Preserve all accounting and continue the next fixed paper period.",
+      "active": false
+    },
+    {
+      "version": "1.0.57",
+      "registeredAt": "2026-11-07T18:47:52.630Z",
+      "summary": "Record exact verification failures and continue paper testing in a distinct period with unchanged entry rules",
+      "active": false
+    },
+    {
+      "version": "1.0.58",
+      "registeredAt": "2026-11-07T20:07:40.772Z",
+      "summary": "Correct fresh quote acquisition to three slots, refresh demand after quotes, and recover bounded native clock interruptions while preserving shared paper capacity and history.",
+      "active": false
+    },
+    {
+      "version": "1.0.59",
+      "registeredAt": "2026-11-07T22:13:40.024Z",
+      "summary": "Repair native entry freshness using coacquired reserves and a fresh execution quote after durable reservation; start the next paper period while retaining history and counters.",
+      "active": false
+    },
+    {
+      "version": "1.0.60",
+      "registeredAt": "2026-11-08T00:00:18.094Z",
+      "summary": "Count owned preparation after a saved reservation toward minimum entry latency; retain legacy delays and 400ms inclusion; extend paper testing within the existing quota.",
+      "active": false
+    },
+    {
+      "version": "1.0.61",
+      "registeredAt": "2026-11-08T01:55:54.929Z",
+      "summary": "Reduce paper data-budget bookkeeping latency while preserving authenticated accounting; record every owned native admission outcome. Entry and exit rules unchanged.",
+      "active": false
+    },
+    {
+      "version": "1.0.62",
+      "registeredAt": "2026-11-08T03:47:16.990Z",
+      "summary": "Fix premature candidate retirement by allowing both reserve observations across the existing confirmation path. Preserve drawdown, freshness, entry and exit rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.63",
+      "registeredAt": "2026-11-08T05:02:31.577Z",
+      "summary": "Remove redundant native idle budget ledger reads while retaining fresh request and pre-entry checks; recover clean slow-calibration stops with a new clock epoch and add failure-stage quote diagnostics",
+      "active": false
+    },
+    {
+      "version": "1.0.64",
+      "registeredAt": "2026-11-08T06:11:26.262Z",
+      "summary": "Share one fresh authenticated budget read between native quota preflight and reservation while preserving durable acknowledgment and exit reserves.",
+      "active": false
+    },
+    {
+      "version": "1.0.65",
+      "registeredAt": "2026-11-08T07:20:30.626Z",
+      "summary": "Remove duplicate budget-ledger reads while preserving fresh per-request durable acknowledgment and exit reserve checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.66",
+      "registeredAt": "2026-11-08T08:17:05.074Z",
+      "summary": "Track three background and nine financially selected native pair outcomes per cohort, with separate 25-second features and fresh 180-second labels; preserve entry rules and Helius quota.",
+      "active": false
+    },
+    {
+      "version": "1.0.67",
+      "registeredAt": "2026-11-08T09:10:38.024Z",
+      "summary": "Retry one settled empty creation receipt for the same signature using the original fresh clock, two-lookup cap and 5.5-second window; retain bounded origin acquisition diagnostics.",
+      "active": false
+    },
+    {
+      "version": "1.0.68",
+      "registeredAt": "2026-11-08T10:14:37.006Z",
+      "summary": "Retain bounded original Pump quote reserves and selected fee arithmetic through existing research callbacks, preserving canonical quote and trade behavior.",
+      "active": false
+    },
+    {
+      "version": "1.0.69",
+      "registeredAt": "2026-11-08T11:13:00.990Z",
+      "summary": "Reduce entry quote bookkeeping by reserving two sequential RPC reads together while preserving per-read charges, freshness and execution checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.70",
+      "registeredAt": "2026-11-08T13:54:07.381Z",
+      "summary": "Exclude Mayhem entries; preserve paired liquidity and processing minimum; use continuous budget lease and cumulative local metadata",
+      "active": false
+    },
+    {
+      "version": "1.0.71",
+      "registeredAt": "2026-11-08T19:07:00.303Z",
+      "summary": "Refuse new writeoffs from known mixed public-pool and virtual-inventory state; retain tokens and costs without scoring a simulated total loss.",
+      "active": false
+    },
+    {
+      "version": "1.0.72",
+      "registeredAt": "2026-11-09T14:35:19.251Z",
+      "summary": "Wait for positive birth-filtered reported spending before paper entries; add a 20% peak / 5% fade exit with higher trailing stops and uncapped PnL.",
+      "active": false
+    },
+    {
+      "version": "1.0.73",
+      "registeredAt": "2026-11-09T15:01:00.787Z",
+      "summary": "Resume unsigned paper execution with preserved virtual market state, same-ledger replay, explicit continuous pipeline and bounded same-pilot continuation; retain 1.0.72 strategy.",
+      "active": false
+    },
+    {
+      "version": "1.0.74",
+      "registeredAt": "2026-11-09T15:43:18.953Z",
+      "summary": "Reject paper entries when net buy flow weakens during preparation or revalidation; handle v1 feed data and no-effect source failures. Native v1 execution remains unavailable.",
+      "active": false
+    },
+    {
+      "version": "1.0.75",
+      "registeredAt": "2026-11-09T15:50:17.429Z",
+      "summary": "Remove the net-deterioration entry veto after broader history exposed a blocked 204% winner; retain positive-net waiting, Mayhem exclusion and existing exits.",
+      "active": false
+    },
+    {
+      "version": "1.0.76",
+      "registeredAt": "2026-11-09T16:00:59.888Z",
+      "summary": "Wait until both the prior spaced quote and latest quote hold the existing 50% rise above reference; keep latest rising, three-quote minimum and positive-net demand. One-quote spikes keep waiting.",
+      "active": false
+    },
+    {
+      "version": "1.0.77",
+      "registeredAt": "2026-11-09T16:17:22.052Z",
+      "summary": "Restore accurate v1 unsigned native simulation with pinned upstream LiteSVM 0.18.1 and original-wire handling; retain the spaced-quote entry strategy and all existing history, custody and budget count",
+      "active": false
+    },
+    {
+      "version": "1.0.78",
+      "registeredAt": "2026-11-09T16:36:17.252Z",
+      "summary": "Fix the subscription-ACK queue race during paper-market startup and restore fully settled zero-effect multi-phase runs without changing custody, outcomes or budgets; keep the spaced-quote entry strate",
+      "active": false
+    },
+    {
+      "version": "1.0.79",
+      "registeredAt": "2026-11-09T16:47:33.246Z",
+      "summary": "Compare matching wire transactions across feeds using equivalent empty balance and reward representations; keep amounts, fees, owners, logs and raw evidence strict. Preserve the existing entry strateg",
+      "active": false
+    },
+    {
+      "version": "1.0.80",
+      "registeredAt": "2026-11-09T17:00:23.489Z",
+      "summary": "Keep unsupported pre-entry candidates from stopping the runner; handle the observed 75-transaction batch within a bounded 128-transaction intake. Strategy, history and budget allowances stay unchanged",
+      "active": false
+    },
+    {
+      "version": "1.0.81",
+      "registeredAt": "2026-11-09T17:19:56.185Z",
+      "summary": "Wait briefly for already-received feed writes to settle before full precut reconciliation; preserve all completeness checks, raw records, strategy and prior accounting.",
+      "active": false
+    },
+    {
+      "version": "1.0.82",
+      "registeredAt": "2026-11-09T17:55:21.714Z",
+      "summary": "Handle the observed feed burst within the unchanged byte and budget bounds; retire closed incomplete transports without refunds or source-completeness claims, and preserve custody through recovery. St",
+      "active": false
+    },
+    {
+      "version": "1.0.83",
+      "registeredAt": "2026-11-09T18:14:48.049Z",
+      "summary": "Request the actual confirmed snapshot at or beyond the processed fence. Clean early confirmation timeouts reject one candidate after closure; source integrity and cleanup failures remain fatal. Strate",
+      "active": false
+    },
+    {
+      "version": "1.0.84",
+      "registeredAt": "2026-11-09T18:23:34.057Z",
+      "summary": "Resume clean paper sessions that ended before tracking a coin. Preserve funds, fees and history while validating up to 128 parent sessions with all cycle, custody and source-closure checks retained. S",
+      "active": false
+    },
+    {
+      "version": "1.0.85",
+      "registeredAt": "2026-11-09T18:39:01.089Z",
+      "summary": "Start processed tracking only after strategy qualification and reservation, before acquiring the fresh execution quote. Handle small-frame bursts within unchanged byte and credit bounds; preserve cust",
+      "active": false
+    },
+    {
+      "version": "1.0.86",
+      "registeredAt": "2026-11-09T19:17:59.156Z",
+      "summary": "Screen up to three original native candidates with deadline-aware serial work. Preserve all buy conditions and one pending entry/position; pin the committed winner and close competing watches before f",
+      "active": false
+    },
+    {
+      "version": "1.0.87",
+      "registeredAt": "2026-11-09T19:48:14.795Z",
+      "summary": "Preserve stopped paper custody after a rejected preparation counted as an attempt but issued no native wire. Require zero fees/executions, the exact original VM journal, unchanged inventory and full s",
+      "active": false
+    },
+    {
+      "version": "1.0.88",
+      "registeredAt": "2026-11-09T20:23:13.518Z",
+      "summary": "Use delayed fresh-market-cap paper entries and exits without wallet balances or transaction replay; retain history and continue discovery automatically.",
       "active": true
     }
   ],
   "live": {
-    "state": "awaiting_recovery",
-    "asOf": "2026-11-04T13:02:19.613Z",
-    "botVersion": "1.0.1",
-    "closed": 12,
-    "unresolved": 1,
+    "state": "stopped",
+    "asOf": "2026-11-09T20:24:15.200Z",
+    "botVersion": "1.0.88",
+    "closed": 45,
+    "unresolved": 0,
     "open": 0
   },
   "stats": {
-    "closedTrades": 12,
-    "writtenOffTrades": 0,
-    "scoredTrades": 12,
-    "unresolvedTrades": 1,
+    "closedTrades": 45,
+    "writtenOffTrades": 6,
+    "scoredTrades": 51,
+    "unresolvedTrades": 0,
     "openTrades": 0,
-    "knownPnlTrades": 12,
-    "wins": 0,
-    "losses": 12,
-    "winRatePercent": 0,
-    "meanPnlPercent": -28.86624,
-    "meanScorePercent": -28.86624,
-    "lastTenCappedMeanPercent": -30.157681
+    "knownPnlTrades": 45,
+    "wins": 7,
+    "losses": 38,
+    "winRatePercent": 15.555556,
+    "meanPnlPercent": -12.262487,
+    "meanScorePercent": -22.584547,
+    "lastTenCappedMeanPercent": -7.323414
   },
   "trades": [
     {
@@ -212,12 +734,544 @@
       "name": null,
       "symbol": null,
       "botVersion": null,
-      "status": "unresolved",
+      "status": "closed",
       "entryMarketCapUsd": 3151.71,
+      "exitMarketCapUsd": 2588.6,
+      "pnlPercent": -17.866644,
+      "scorePercent": -17.866644,
+      "openedAt": "2026-11-04T12:58:39.894Z",
+      "closedAt": "2026-11-04T15:43:39.524Z"
+    },
+    {
+      "id": "paper:c9088ebf-4c9f-4abb-b98c-30cb5583017a",
+      "mint": "2KEbe3bNkXG5HtwRpEbHTRK7FowRX9TprxMckzonpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.3",
+      "status": "written_off",
+      "entryMarketCapUsd": 2703.19,
       "exitMarketCapUsd": null,
       "pnlPercent": null,
-      "scorePercent": null,
-      "openedAt": "2026-11-04T12:58:39.894Z",
+      "scorePercent": -100,
+      "openedAt": "2026-11-04T16:27:45.057Z",
+      "closedAt": null
+    },
+    {
+      "id": "paper:5623bc9a-e365-4465-b4c5-04ab573fa533",
+      "mint": "6oPj1B6SahM7poa4aufsthFNJtv9yxhSmDaEPvtqpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.7",
+      "status": "written_off",
+      "entryMarketCapUsd": 3084.35,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "scorePercent": -100,
+      "openedAt": "2026-11-04T19:11:51.372Z",
+      "closedAt": null
+    },
+    {
+      "id": "paper:bdbf92df-974c-4e94-8a2c-efb57dae34f5",
+      "mint": "vqHrUbP7aBhVe9c7HNErfYZAyDxA99nRj7dt3vEpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 4368.4,
+      "exitMarketCapUsd": 7426.18,
+      "pnlPercent": 69.997568,
+      "scorePercent": 69.997568,
+      "openedAt": "2026-11-04T23:35:45.891Z",
+      "closedAt": "2026-11-04T23:36:08.830Z"
+    },
+    {
+      "id": "paper:79a77dc5-c037-4bac-b160-31a70e9e95b5",
+      "mint": "8Z64uXGm1WPyMGAXbGFfoBCNEewBqeJ4VBFgsi6qpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 5176.4,
+      "exitMarketCapUsd": 2821.76,
+      "pnlPercent": -45.487927,
+      "scorePercent": -45.487927,
+      "openedAt": "2026-11-04T23:47:21.751Z",
+      "closedAt": "2026-11-04T23:47:28.263Z"
+    },
+    {
+      "id": "paper:5711c948-b641-4f6e-a369-98295f56144d",
+      "mint": "8yCxJKD4RYJabrAdMEXsC6ChFLhYWNR76Smog1Urpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 5215.74,
+      "exitMarketCapUsd": 12706.11,
+      "pnlPercent": 143.610961,
+      "scorePercent": 143.610961,
+      "openedAt": "2026-11-04T23:52:29.801Z",
+      "closedAt": "2026-11-04T23:53:05.400Z"
+    },
+    {
+      "id": "paper:62d94fcd-9a74-405d-9fe1-3de30df0ffd1",
+      "mint": "HkDJXYHxVNAYbg1XiWEkfwj1LjGQ77GbTjQymWcupump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 3010.94,
+      "exitMarketCapUsd": 4654.12,
+      "pnlPercent": 54.573554,
+      "scorePercent": 54.573554,
+      "openedAt": "2026-11-04T23:59:46.683Z",
+      "closedAt": "2026-11-05T00:00:00.579Z"
+    },
+    {
+      "id": "paper:c61da422-e02b-496c-b4f6-550bdf3e1734",
+      "mint": "9ALCe3Sq5xYzx2kdcp9YJFWBJ1d7XjvbVT6ZLzL5pump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 3827.98,
+      "exitMarketCapUsd": 2853.32,
+      "pnlPercent": -25.461322,
+      "scorePercent": -25.461322,
+      "openedAt": "2026-11-05T00:01:33.245Z",
+      "closedAt": "2026-11-05T00:02:06.688Z"
+    },
+    {
+      "id": "paper:a9b313af-ff6c-463f-b03e-49e7be8588ca",
+      "mint": "5vkKwZeb21CX5sPTwViqMjXp4q8bsohpZzGRieyM6AM8",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 4739.24,
+      "exitMarketCapUsd": 3087.31,
+      "pnlPercent": -34.856366,
+      "scorePercent": -34.856366,
+      "openedAt": "2026-11-05T00:08:11.777Z",
+      "closedAt": "2026-11-05T00:08:27.919Z"
+    },
+    {
+      "id": "paper:2d7fefe0-fa52-4a0d-ad77-8226147d573e",
+      "mint": "J2PzqN6cXjGS3qSac3rZqrtf3ir81zyEX8VKhogopump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.10",
+      "status": "closed",
+      "entryMarketCapUsd": 6378.99,
+      "exitMarketCapUsd": 3556.46,
+      "pnlPercent": -44.247297,
+      "scorePercent": -44.247297,
+      "openedAt": "2026-11-05T00:12:31.887Z",
+      "closedAt": "2026-11-05T00:12:45.964Z"
+    },
+    {
+      "id": "paper:6e0bc6a5-4e66-4536-a17c-ec99b5ccef7d",
+      "mint": "FftESVMpzQ2FQVGCrLkdxL4W2ojnPAHY2jcyZd2vpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.11",
+      "status": "closed",
+      "entryMarketCapUsd": 2683.14,
+      "exitMarketCapUsd": 2675.66,
+      "pnlPercent": -0.27864,
+      "scorePercent": -0.27864,
+      "openedAt": "2026-11-05T00:59:13.415Z",
+      "closedAt": "2026-11-05T01:00:14.710Z"
+    },
+    {
+      "id": "paper:791a2f4a-ad1e-499e-bbcd-677aaaca886e",
+      "mint": "XGk9JQKs8F2G3YLRkK2YhKW2f1bCEP1SwWk8uympump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.11",
+      "status": "closed",
+      "entryMarketCapUsd": 4499.11,
+      "exitMarketCapUsd": 3979.38,
+      "pnlPercent": -11.551817,
+      "scorePercent": -11.551817,
+      "openedAt": "2026-11-05T01:25:44.773Z",
+      "closedAt": "2026-11-05T01:26:47.184Z"
+    },
+    {
+      "id": "paper:bbae4b7a-1cbe-4a22-8239-22e1b10a5ddd",
+      "mint": "GEgcnM9AxuNnRyceezJLztzXCVD4Yb7Tk6Xrovcpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.16",
+      "status": "closed",
+      "entryMarketCapUsd": 2765.08,
+      "exitMarketCapUsd": 2674.22,
+      "pnlPercent": -3.285698,
+      "scorePercent": -3.285698,
+      "openedAt": "2026-11-05T13:01:10.803Z",
+      "closedAt": "2026-11-05T13:02:12.348Z"
+    },
+    {
+      "id": "paper:c128e303-7f44-4ee7-8adb-49befa807e26",
+      "mint": "83iQcLRhSN9EeoJnDX1EY3NKwDx5Rp6MeRWpd93ukgng",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.17",
+      "status": "written_off",
+      "entryMarketCapUsd": 3180.61,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "scorePercent": -100,
+      "openedAt": "2026-11-05T14:21:36.389Z",
+      "closedAt": null
+    },
+    {
+      "id": "paper:cf541907-5169-46ec-83f3-42ea981aeeee",
+      "mint": "BorhmsovrJaXiKRzcPrdpx2Zqks3j3jnkoKTyFCepump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.18",
+      "status": "written_off",
+      "entryMarketCapUsd": 2904.82,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "scorePercent": -100,
+      "openedAt": "2026-11-05T15:30:31.360Z",
+      "closedAt": null
+    },
+    {
+      "id": "paper:990870f6-f8bb-4dc6-89e5-7c4f973afa22",
+      "mint": "3Q4D7beAeZ3F5yJ4jMTMjKAYQNm3nbEBJeRcNXpzpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.19",
+      "status": "closed",
+      "entryMarketCapUsd": 4592.82,
+      "exitMarketCapUsd": 2594.63,
+      "pnlPercent": -43.506778,
+      "scorePercent": -43.506778,
+      "openedAt": "2026-11-05T17:11:08.051Z",
+      "closedAt": "2026-11-05T17:11:10.038Z"
+    },
+    {
+      "id": "paper:53cacb83-870a-47ff-9871-d65765f3537f",
+      "mint": "25ZqSsNBXRJQeKfMVH1BdXmQ7DJ3tDL9ETtiTZuLpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.19",
+      "status": "closed",
+      "entryMarketCapUsd": 3785.8,
+      "exitMarketCapUsd": 3785.6,
+      "pnlPercent": -0.005366,
+      "scorePercent": -0.005366,
+      "openedAt": "2026-11-05T17:28:17.923Z",
+      "closedAt": "2026-11-05T17:29:19.133Z"
+    },
+    {
+      "id": "paper:9f0c3e57-14b9-4b84-99ac-b747f9e0645c",
+      "mint": "HGagoY1TRQfJYyQHTFdtjjK17wZJZDuyq3HBWQoKpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.22",
+      "status": "closed",
+      "entryMarketCapUsd": 5406.26,
+      "exitMarketCapUsd": 2731.28,
+      "pnlPercent": -49.479258,
+      "scorePercent": -49.479258,
+      "openedAt": "2026-11-05T19:22:13.700Z",
+      "closedAt": "2026-11-05T19:22:14.892Z"
+    },
+    {
+      "id": "paper:29e3be70-4c45-4d24-baa2-2ae945669033",
+      "mint": "D2JppSyYCqFpWHTDS1eQKyWQ5EXhukfMY1EjB4uXNudY",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.39",
+      "status": "closed",
+      "entryMarketCapUsd": 2658.63,
+      "exitMarketCapUsd": 2921.71,
+      "pnlPercent": 9.895153,
+      "scorePercent": 9.895153,
+      "openedAt": "2026-11-06T18:10:51.762Z",
+      "closedAt": "2026-11-06T18:12:02.867Z"
+    },
+    {
+      "id": "paper:0cdc0981-ac27-472b-80a5-9805356338f5",
+      "mint": "8tLwzamVQqsJTo46GWSsyj5nQGwS2dH38kMvscvtpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.40",
+      "status": "closed",
+      "entryMarketCapUsd": 7043.65,
+      "exitMarketCapUsd": 5288.72,
+      "pnlPercent": -24.915114,
+      "scorePercent": -24.915114,
+      "openedAt": "2026-11-06T20:01:27.610Z",
+      "closedAt": "2026-11-06T20:02:16.496Z"
+    },
+    {
+      "id": "paper:bba101d3-0aac-487d-837b-addd0e6d32dc",
+      "mint": "6uyJRUZpMkcbJ1f2poYKMikF4nEQmMHCXuf3KEubpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.40",
+      "status": "closed",
+      "entryMarketCapUsd": 7338.61,
+      "exitMarketCapUsd": 6027.4,
+      "pnlPercent": -17.867311,
+      "scorePercent": -17.867311,
+      "openedAt": "2026-11-06T20:03:35.940Z",
+      "closedAt": "2026-11-06T20:03:49.529Z"
+    },
+    {
+      "id": "paper:c37bcc8e-07c5-48cc-9d8e-08ceced7edd5",
+      "mint": "49oFg7KZ6zBpenJhWEd8EtD1rKhE7N4Cy2tGMrpqpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.45",
+      "status": "closed",
+      "entryMarketCapUsd": 4544.86,
+      "exitMarketCapUsd": 3312.79,
+      "pnlPercent": -27.108996,
+      "scorePercent": -27.108996,
+      "openedAt": "2026-11-07T01:30:16.946Z",
+      "closedAt": "2026-11-07T01:30:28.454Z"
+    },
+    {
+      "id": "paper:db6e7a83-a919-4ea0-9bee-6403b6db2964",
+      "mint": "EBXBMyGYZeqdGLu6ANaiAhUVg2sego2N3ytYFu4vpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.52",
+      "status": "written_off",
+      "entryMarketCapUsd": 2409.98,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "scorePercent": -100,
+      "openedAt": "2026-11-07T12:16:20.963Z",
+      "closedAt": null
+    },
+    {
+      "id": "paper:542b45e7-017d-4a28-b1ba-9d04df5ec546",
+      "mint": "Hquq7PHgZq1qZpQ9SSnyKhoGmEGE7PVtmHxc1DPupump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.54",
+      "status": "closed",
+      "entryMarketCapUsd": 3031.3,
+      "exitMarketCapUsd": 1650.47,
+      "pnlPercent": -45.552557,
+      "scorePercent": -45.552557,
+      "openedAt": "2026-11-07T14:06:14.408Z",
+      "closedAt": "2026-11-07T14:06:16.893Z"
+    },
+    {
+      "id": "paper:08aab388-1624-4c73-9b11-5f5c7549df87",
+      "mint": "2Vi5WWmKdAyRv3zeWW6UQhovJcg47NM58DJ9mwjopump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.54",
+      "status": "closed",
+      "entryMarketCapUsd": 4731.62,
+      "exitMarketCapUsd": 3049.61,
+      "pnlPercent": -35.548235,
+      "scorePercent": -35.548235,
+      "openedAt": "2026-11-07T14:06:47.241Z",
+      "closedAt": "2026-11-07T14:06:50.721Z"
+    },
+    {
+      "id": "paper:133c8bd6-97f9-4906-91eb-102f6344491d",
+      "mint": "EojZ5VyZfQf473SKqM8fFgEi68b1ebrh7pkkzeZTpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.54",
+      "status": "closed",
+      "entryMarketCapUsd": 7129,
+      "exitMarketCapUsd": 4560.56,
+      "pnlPercent": -36.028153,
+      "scorePercent": -36.028153,
+      "openedAt": "2026-11-07T14:12:24.257Z",
+      "closedAt": "2026-11-07T14:12:34.817Z"
+    },
+    {
+      "id": "paper:3068157b-fbfd-4ef2-8180-1e29fed699cf",
+      "mint": "DdUJ3acU4YRcmzvDibg6F8N27sWb1Fn57tj69HKxpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.54",
+      "status": "closed",
+      "entryMarketCapUsd": 9439.81,
+      "exitMarketCapUsd": 9603.55,
+      "pnlPercent": 1.734603,
+      "scorePercent": 1.734603,
+      "openedAt": "2026-11-07T14:39:05.212Z",
+      "closedAt": "2026-11-07T14:42:09.321Z"
+    },
+    {
+      "id": "paper:b0517eaa-a141-41f3-8370-e375462e30f5",
+      "mint": "5ghDZYkHsxao8WK788o7XrGAcymZBrhAJCPJe4sMpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.54",
+      "status": "closed",
+      "entryMarketCapUsd": 6446.27,
+      "exitMarketCapUsd": 4521.64,
+      "pnlPercent": -29.856448,
+      "scorePercent": -29.856448,
+      "openedAt": "2026-11-07T14:52:51.717Z",
+      "closedAt": "2026-11-07T14:53:00.582Z"
+    },
+    {
+      "id": "paper:dfd14171-f79c-4cd6-bc3a-36dbd8c26ca9",
+      "mint": "xBHoVURMbC9gAVGn82ifcHLQ8XikhnEbf5MFzySpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.55",
+      "status": "closed",
+      "entryMarketCapUsd": 2455.56,
+      "exitMarketCapUsd": 1986.78,
+      "pnlPercent": -19.090797,
+      "scorePercent": -19.090797,
+      "openedAt": "2026-11-07T15:41:24.643Z",
+      "closedAt": "2026-11-07T15:41:28.258Z"
+    },
+    {
+      "id": "paper:69b5606e-904b-41e0-8319-7615b01ec20a",
+      "mint": "61z8qUuxoZnrGh4e1jT5XxvX1xXdoAEQdLQujLVopump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.55",
+      "status": "closed",
+      "entryMarketCapUsd": 4520.35,
+      "exitMarketCapUsd": 3689.66,
+      "pnlPercent": -18.376785,
+      "scorePercent": -18.376785,
+      "openedAt": "2026-11-07T15:43:13.272Z",
+      "closedAt": "2026-11-07T15:43:19.766Z"
+    },
+    {
+      "id": "paper:d66cc425-0a20-4537-866f-6a19a41d5856",
+      "mint": "2hMsts4w7spbogsQcuWRBc9H9dHx1ePYvPGc3Kzapump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.55",
+      "status": "closed",
+      "entryMarketCapUsd": 4244.97,
+      "exitMarketCapUsd": 2871.06,
+      "pnlPercent": -32.365618,
+      "scorePercent": -32.365618,
+      "openedAt": "2026-11-07T16:00:09.199Z",
+      "closedAt": "2026-11-07T16:00:24.486Z"
+    },
+    {
+      "id": "paper:6bf0adc9-3d46-4f31-bcfb-ac080e1ff4c4",
+      "mint": "DxEYQYxZ5bugAtyeGqHTHLmXxd7Yj56Q1sCmRwrpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.55",
+      "status": "closed",
+      "entryMarketCapUsd": 7172.22,
+      "exitMarketCapUsd": 12323.98,
+      "pnlPercent": 71.829377,
+      "scorePercent": 71.829377,
+      "openedAt": "2026-11-07T16:21:32.292Z",
+      "closedAt": "2026-11-07T16:23:23.993Z"
+    },
+    {
+      "id": "paper:026eaaae-c56a-44d6-a99b-99ba35ead490",
+      "mint": "Abfj1rTsCozi9fRW66gkDDE5E7pziNNFw8DYrWAvpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.60",
+      "status": "closed",
+      "entryMarketCapUsd": 5259.74,
+      "exitMarketCapUsd": 2146.11,
+      "pnlPercent": -59.197494,
+      "scorePercent": -59.197494,
+      "openedAt": "2026-11-08T00:08:59.823Z",
+      "closedAt": "2026-11-08T00:09:05.300Z"
+    },
+    {
+      "id": "paper:ad36f547-3d5a-4737-a240-882be57fcede",
+      "mint": "7Pd5NGEkqH2abNqJ7ZfEuuW4E2gxGa77fejYw1Hypump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.60",
+      "status": "closed",
+      "entryMarketCapUsd": 10215.62,
+      "exitMarketCapUsd": 31068.08,
+      "pnlPercent": 204.123313,
+      "scorePercent": 204.123313,
+      "openedAt": "2026-11-08T00:36:38.880Z",
+      "closedAt": "2026-11-08T00:37:14.520Z"
+    },
+    {
+      "id": "paper:3b147eed-0352-4720-bde1-24588f1fe4eb",
+      "mint": "4hQT4TAmSngbU8UfjZEYK3syWN5NUGDNSia4Urazpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.63",
+      "status": "closed",
+      "entryMarketCapUsd": 4053.26,
+      "exitMarketCapUsd": 2513.21,
+      "pnlPercent": -37.995328,
+      "scorePercent": -37.995328,
+      "openedAt": "2026-11-08T05:46:09.198Z",
+      "closedAt": "2026-11-08T05:46:13.597Z"
+    },
+    {
+      "id": "paper:4e65f9f9-843f-4634-9cca-9650df673d18",
+      "mint": "APQ6s7gHaVouBF8vdGQ8GaABfXL84rkX45BYYBtApump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.66",
+      "status": "closed",
+      "entryMarketCapUsd": 5025.79,
+      "exitMarketCapUsd": 3968.36,
+      "pnlPercent": -21.040163,
+      "scorePercent": -21.040163,
+      "openedAt": "2026-11-08T08:45:36.933Z",
+      "closedAt": "2026-11-08T08:47:09.604Z"
+    },
+    {
+      "id": "paper:318734b7-e839-4e88-a9f3-a7a7f876e6fd",
+      "mint": "5XcKd18w1U2mVCjuSuBDvcSTw84WX8hcAYKhzGFTpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.67",
+      "status": "closed",
+      "entryMarketCapUsd": 7015.96,
+      "exitMarketCapUsd": 4947.81,
+      "pnlPercent": -29.477863,
+      "scorePercent": -29.477863,
+      "openedAt": "2026-11-08T09:21:06.462Z",
+      "closedAt": "2026-11-08T09:21:11.829Z"
+    },
+    {
+      "id": "paper:34805e63-e3ee-4700-952e-620e579e713d",
+      "mint": "Gjb6PKWRReaEorScZrSkXFYgPc7tomranyKCw7UHpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.70",
+      "status": "closed",
+      "entryMarketCapUsd": 7911.16,
+      "exitMarketCapUsd": 3897.55,
+      "pnlPercent": -50.733577,
+      "scorePercent": -50.733577,
+      "openedAt": "2026-11-08T14:27:07.906Z",
+      "closedAt": "2026-11-08T14:27:54.600Z"
+    },
+    {
+      "id": "paper:dc82e77f-7029-4e4a-8373-2e9ded7707e0",
+      "mint": "ATb19FNoL9otBbd3fGz9kA7ZbEcNsaVJJv4EgSEBpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.70",
+      "status": "written_off",
+      "entryMarketCapUsd": 2706.97,
+      "exitMarketCapUsd": null,
+      "pnlPercent": null,
+      "scorePercent": -100,
+      "openedAt": "2026-11-08T15:05:59.049Z",
       "closedAt": null
     }
   ]

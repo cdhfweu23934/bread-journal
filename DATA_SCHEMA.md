@@ -19,4 +19,8 @@ Market cap uses actual executed principal or gross proceeds divided by actual to
 
 Entry/exit timestamps come only from matching archived `paper.entry` and `paper.exit` records. Original process monotonic times are never converted to UTC or relabeled. The current retained trade records do not prove token names/symbols, so those fields remain `null`; UI may display a shortened mint. Such metadata must not be inferred from news or unverified labels.
 
+The explicit `paper_calls` mode with model `delayed_live_market_cap_calls_v1` is also accepted. Its new call rows add only `entryMarketCapSol`, `exitMarketCapSol` and `pnlBasis: "delayed_market_cap_change"`. Their PnL is recomputed from the exact retained entry/exit market-cap fractions; it does not require or claim wallet settlement. Call times use the retained UTC observation timestamps. Open calls have no exit cap or realized return. The same positive-only +333% scoring cap and all losses apply. Legacy position export and write-off proof rules remain unchanged.
+
+The UI prefers a known USD cap and otherwise shows the explicit SOL cap with a `SOL` suffix. It never treats SOL as USD or fetches a conversion rate. Call records are labeled as delayed market-cap returns rather than executed returns. Existing rows without the new fields remain valid.
+
 The public allowlist excludes wallet addresses, account arrays, raw receipts, execution IDs, source paths, provider details, keys, webhooks, configuration, and debug/error payloads. `assertPublicSchema` rejects extra keys before any output write. A browser-side `123` gate is a convenience screen; static public JSON remains publicly retrievable and contains only this sanitized projection.
