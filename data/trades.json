@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T17:57:09.820Z",
+  "updatedAt": "2026-11-09T17:57:13.192Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -498,12 +498,18 @@
       "version": "1.0.82",
       "registeredAt": "2026-11-09T17:55:21.714Z",
       "summary": "Handle the observed feed burst within the unchanged byte and budget bounds; retire closed incomplete transports without refunds or source-completeness claims, and preserve custody through recovery. St",
+      "active": false
+    },
+    {
+      "version": "1.0.83",
+      "registeredAt": "2026-11-09T18:14:48.049Z",
+      "summary": "Request the actual confirmed snapshot at or beyond the processed fence. Clean early confirmation timeouts reject one candidate after closure; source integrity and cleanup failures remain fatal. Strate",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-09T17:57:09.820Z",
+    "asOf": "2026-11-09T17:57:13.192Z",
     "botVersion": "1.0.82",
     "closed": 45,
     "unresolved": 0,
