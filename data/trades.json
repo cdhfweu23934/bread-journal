@@ -582,6 +582,12 @@
       "version": "1.0.96",
       "registeredAt": "2026-11-09T23:08:21.236Z",
       "summary": "Retire inactive ordinary Pump watches after three unchanged reserve confirmations; keep changing or unknown pools and preserve all price, ownership and delayed-entry checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.97",
+      "registeredAt": "2026-11-09T23:40:21.259Z",
+      "summary": "Let healthy paper observers record an empty early received baseline; require live later buyers, unchanged risk checks and fresh delayed prices before any entry. Unknown current flow still blocks.",
       "active": true
     }
   ],
