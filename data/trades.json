@@ -486,6 +486,12 @@
       "version": "1.0.80",
       "registeredAt": "2026-11-09T17:00:23.489Z",
       "summary": "Keep unsupported pre-entry candidates from stopping the runner; handle the observed 75-transaction batch within a bounded 128-transaction intake. Strategy, history and budget allowances stay unchanged",
+      "active": false
+    },
+    {
+      "version": "1.0.81",
+      "registeredAt": "2026-11-09T17:19:56.185Z",
+      "summary": "Wait briefly for already-received feed writes to settle before full precut reconciliation; preserve all completeness checks, raw records, strategy and prior accounting.",
       "active": true
     }
   ],
