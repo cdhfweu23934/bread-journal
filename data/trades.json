@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T19:45:07.221Z",
+  "updatedAt": "2026-11-09T20:26:07.263Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -534,13 +534,19 @@
       "version": "1.0.88",
       "registeredAt": "2026-11-09T20:23:13.518Z",
       "summary": "Use delayed fresh-market-cap paper entries and exits without wallet balances or transaction replay; retain history and continue discovery automatically.",
+      "active": false
+    },
+    {
+      "version": "1.0.89",
+      "registeredAt": "2026-11-09T20:24:30.930Z",
+      "summary": "Preserve archived orphan records across paper-call status writes and restarts without restoring wallet simulation.",
       "active": true
     }
   ],
   "live": {
-    "state": "stopped",
-    "asOf": "2026-11-09T19:45:07.221Z",
-    "botVersion": "1.0.86",
+    "state": "running",
+    "asOf": "2026-11-09T20:26:07.263Z",
+    "botVersion": "1.0.89",
     "closed": 45,
     "unresolved": 0,
     "open": 0
