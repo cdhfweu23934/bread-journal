@@ -444,6 +444,12 @@
       "version": "1.0.73",
       "registeredAt": "2026-11-09T15:01:00.787Z",
       "summary": "Resume unsigned paper execution with preserved virtual market state, same-ledger replay, explicit continuous pipeline and bounded same-pilot continuation; retain 1.0.72 strategy.",
+      "active": false
+    },
+    {
+      "version": "1.0.74",
+      "registeredAt": "2026-11-09T15:43:18.953Z",
+      "summary": "Reject paper entries when net buy flow weakens during preparation or revalidation; handle v1 feed data and no-effect source failures. Native v1 execution remains unavailable.",
       "active": true
     }
   ],
