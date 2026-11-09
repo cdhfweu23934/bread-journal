@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T16:21:45.157Z",
+  "updatedAt": "2026-11-09T16:21:48.456Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -468,12 +468,18 @@
       "version": "1.0.77",
       "registeredAt": "2026-11-09T16:17:22.052Z",
       "summary": "Restore accurate v1 unsigned native simulation with pinned upstream LiteSVM 0.18.1 and original-wire handling; retain the spaced-quote entry strategy and all existing history, custody and budget count",
+      "active": false
+    },
+    {
+      "version": "1.0.78",
+      "registeredAt": "2026-11-09T16:36:17.252Z",
+      "summary": "Fix the subscription-ACK queue race during paper-market startup and restore fully settled zero-effect multi-phase runs without changing custody, outcomes or budgets; keep the spaced-quote entry strate",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-09T16:21:45.157Z",
+    "asOf": "2026-11-09T16:21:48.456Z",
     "botVersion": "1.0.77",
     "closed": 45,
     "unresolved": 0,
