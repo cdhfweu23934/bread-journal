@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T22:41:06.673Z",
+  "updatedAt": "2026-11-09T22:42:51.001Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -570,12 +570,18 @@
       "version": "1.0.94",
       "registeredAt": "2026-11-09T22:20:24.750Z",
       "summary": "Screen reported ownership after the first reference to reject bundled launches earlier; preserve reference deadlines and require a fresh final ownership pass before every paper entry.",
+      "active": false
+    },
+    {
+      "version": "1.0.95",
+      "registeredAt": "2026-11-09T22:42:57.790Z",
+      "summary": "Renew cleanly replaced Axiom transport connections automatically through the existing source-start path, preserving the paper book, usage counters and user-stop and quota guards.",
       "active": true
     }
   ],
   "live": {
-    "state": "running",
-    "asOf": "2026-11-09T22:41:06.673Z",
+    "state": "stopped",
+    "asOf": "2026-11-09T22:42:51.001Z",
     "botVersion": "1.0.94",
     "closed": 48,
     "unresolved": 0,
