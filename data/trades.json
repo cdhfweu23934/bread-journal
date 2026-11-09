@@ -438,6 +438,12 @@
       "version": "1.0.72",
       "registeredAt": "2026-11-09T14:35:19.251Z",
       "summary": "Wait for positive birth-filtered reported spending before paper entries; add a 20% peak / 5% fade exit with higher trailing stops and uncapped PnL.",
+      "active": false
+    },
+    {
+      "version": "1.0.73",
+      "registeredAt": "2026-11-09T15:01:00.787Z",
+      "summary": "Resume unsigned paper execution with preserved virtual market state, same-ledger replay, explicit continuous pipeline and bounded same-pilot continuation; retain 1.0.72 strategy.",
       "active": true
     }
   ],
