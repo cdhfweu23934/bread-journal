@@ -4,6 +4,6 @@ A static paper-trading journal with a searchable, paginated ledger, return chart
 
 The viewing password is `123`. This is a client-side convenience gate; the published data remains public.
 
-Entry and exit market caps use executed prices and actual mint supply. USD values reuse each position's recorded display-time SOL conversion. PnL preserves the bot's executed price return, excluding fees. Unresolved positions have no fabricated exit or realized return.
+Legacy entries retain their executed-price market caps and recorded display-time USD conversion. New paper calls show USD market caps using each entry or exit minute's cached SOL/USD close; the drawer identifies those minutes. Missing conversions display an em dash, never SOL. FX changes display only: paper-call PnL compares the original native market-cap observations after the entry and exit delays. Historical returns and scores remain unchanged. Open or unresolved positions have no fabricated exit or realized return.
 
 The UI is served through GitHub Pages. A separate `live` branch carries the sanitized trade export so data updates don't rebuild the site.

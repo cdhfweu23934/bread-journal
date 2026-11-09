@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T20:26:07.263Z",
+  "updatedAt": "2026-11-09T22:00:15.844Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -540,30 +540,54 @@
       "version": "1.0.89",
       "registeredAt": "2026-11-09T20:24:30.930Z",
       "summary": "Preserve archived orphan records across paper-call status writes and restarts without restoring wallet simulation.",
+      "active": false
+    },
+    {
+      "version": "1.0.90",
+      "registeredAt": "2026-11-09T20:32:13.954Z",
+      "summary": "Record the fresh delayed paper-call entry price after signal qualification; retain price-deviation and rug checks without demanding another rising confirmation.",
+      "active": false
+    },
+    {
+      "version": "1.0.91",
+      "registeredAt": "2026-11-09T20:48:38.386Z",
+      "summary": "Let trailing-protected paper winners run while making new highs; close stalled winners after five minutes without a new high, retain flat-trade timeout, and record entry context and price paths.",
+      "active": false
+    },
+    {
+      "version": "1.0.92",
+      "registeredAt": "2026-11-09T20:57:58.339Z",
+      "summary": "Reject explicitly reported bundled multi-buy transactions in paper entries; preserve ordinary candidates and retry transient Windows status-file sharing conflicts.",
+      "active": false
+    },
+    {
+      "version": "1.0.93",
+      "registeredAt": "2026-11-09T21:46:18.329Z",
+      "summary": "Require fresh Axiom holder-risk data before paper entries; reject reported bundled or insider holdings and missing data, retain delayed live prices and restore the fixed five-minute exit.",
       "active": true
     }
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-09T20:26:07.263Z",
-    "botVersion": "1.0.89",
-    "closed": 45,
+    "asOf": "2026-11-09T22:00:15.844Z",
+    "botVersion": "1.0.93",
+    "closed": 48,
     "unresolved": 0,
     "open": 0
   },
   "stats": {
-    "closedTrades": 45,
+    "closedTrades": 48,
     "writtenOffTrades": 6,
-    "scoredTrades": 51,
+    "scoredTrades": 54,
     "unresolvedTrades": 0,
     "openTrades": 0,
-    "knownPnlTrades": 45,
-    "wins": 7,
-    "losses": 38,
-    "winRatePercent": 15.555556,
-    "meanPnlPercent": -12.262487,
-    "meanScorePercent": -22.584547,
-    "lastTenCappedMeanPercent": -7.323414
+    "knownPnlTrades": 48,
+    "wins": 9,
+    "losses": 39,
+    "winRatePercent": 18.75,
+    "meanPnlPercent": -10.040045,
+    "meanScorePercent": -20.035596,
+    "lastTenCappedMeanPercent": -2.443139
   },
   "trades": [
     {
@@ -1279,6 +1303,87 @@
       "scorePercent": -100,
       "openedAt": "2026-11-08T15:05:59.049Z",
       "closedAt": null
+    },
+    {
+      "id": "paper:02161756-fdc1-4123-9ce4-8a0ad30c1c6e",
+      "mint": "D51MH5hXTwr3qBpT2YPdMESAV1eyGZZGZovSoM2npump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.90",
+      "status": "closed",
+      "entryMarketCapUsd": 12031.54,
+      "exitMarketCapUsd": 28744.4,
+      "entryMarketCapSol": 138.964426,
+      "exitMarketCapSol": 331.653387,
+      "pnlBasis": "delayed_market_cap_change",
+      "entryUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794256380000,
+        "solUsd": "86.58"
+      },
+      "exitUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794256680000,
+        "solUsd": "86.67"
+      },
+      "pnlPercent": 138.660639,
+      "scorePercent": 138.660639,
+      "openedAt": "2026-11-09T20:33:49.406Z",
+      "closedAt": "2026-11-09T20:38:50.248Z"
+    },
+    {
+      "id": "paper:82c7661d-fa84-41c7-8b4a-458e7c182b3a",
+      "mint": "AVuadaRzXAftktjVvmsZbD754Qjnc6ZpH97W1JtUpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.90",
+      "status": "closed",
+      "entryMarketCapUsd": 12562.3,
+      "exitMarketCapUsd": 2455.69,
+      "entryMarketCapSol": 145.12824,
+      "exitMarketCapSol": 28.396031,
+      "pnlBasis": "delayed_market_cap_change",
+      "entryUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794256860000,
+        "solUsd": "86.56"
+      },
+      "exitUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794256920000,
+        "solUsd": "86.48"
+      },
+      "pnlPercent": -80.433835,
+      "scorePercent": -80.433835,
+      "openedAt": "2026-11-09T20:41:26.471Z",
+      "closedAt": "2026-11-09T20:42:52.522Z"
+    },
+    {
+      "id": "paper:e19804a9-42ce-47eb-8fb2-e3ee8e7193d1",
+      "mint": "6253FptRps2kJTx5XHb45Z5QcMbtwZ7SxTaVDf3qpump",
+      "name": null,
+      "symbol": null,
+      "botVersion": "1.0.92",
+      "status": "closed",
+      "entryMarketCapUsd": 9872.38,
+      "exitMarketCapUsd": 11012.31,
+      "entryMarketCapSol": 114.237235,
+      "exitMarketCapSol": 127.560631,
+      "pnlBasis": "delayed_market_cap_change",
+      "entryUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794259320000,
+        "solUsd": "86.42"
+      },
+      "exitUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794259380000,
+        "solUsd": "86.33"
+      },
+      "pnlPercent": 11.662919,
+      "scorePercent": 11.662919,
+      "openedAt": "2026-11-09T21:22:17.342Z",
+      "closedAt": "2026-11-09T21:23:09.380Z"
     }
   ]
 }

@@ -6,8 +6,7 @@
   const finite = value => typeof value === 'number' && Number.isFinite(value);
   const validDate = value => typeof value === 'string' && Number.isFinite(Date.parse(value)) ? value : null;
   const price = value => value === null ? '—' : '$' + new Intl.NumberFormat('en-US', {notation:value >= 1000 ? 'compact' : 'standard',maximumFractionDigits:value >= 1000 ? 2 : 0}).format(value);
-  const marketCap = (trade,side) => trade[side+'MarketCapUsd'] !== null ? price(trade[side+'MarketCapUsd'])
-    : trade[side+'MarketCapSol'] !== null ? new Intl.NumberFormat('en-US',{notation:trade[side+'MarketCapSol']>=1000?'compact':'standard',maximumFractionDigits:4}).format(trade[side+'MarketCapSol'])+' SOL' : '—';
+  const marketCap = (trade,side) => price(trade[side+'MarketCapUsd']);
   const percent = value => value === null ? '—' : new Intl.NumberFormat('en-US', {minimumFractionDigits:2,maximumFractionDigits:2,signDisplay:'always'}).format(Object.is(value,-0)?0:value).replace('-', '−') + '%';
   const pnlClass = value => value === null || value === 0 ? 'neutral' : value > 0 ? 'positive' : 'negative';
   const shortMint = mint => mint.slice(0, 5) + '…' + mint.slice(-5);
@@ -25,6 +24,9 @@
   let refreshTimer, fetchController, toastTimer, priorFocus, requestGeneration=0;
   const storage = {get:()=>{try{return sessionStorage.getItem('bread-journal-open')==='yes';}catch{return false;}},set:value=>{try{value?sessionStorage.setItem('bread-journal-open','yes'):sessionStorage.removeItem('bread-journal-open');}catch{}}};
 
+  const usdConversion=value=>value&&value.source==='coinbase_SOL_USD_1m_close'&&Number.isSafeInteger(value.minuteStartMs)
+    &&value.minuteStartMs%60000===0&&value.minuteStartMs>=946684800000&&value.minuteStartMs<4102444800000&&validDate(new Date(value.minuteStartMs).toISOString())
+    ?{source:value.source,minuteStartMs:value.minuteStartMs}:null;
   function normalize(payload) {
     if (!payload || payload.schemaVersion !== 1 || !Array.isArray(payload.trades) || payload.trades.length > 10000) throw new Error('This export has an unsupported format.');
     const seen = new Set();
@@ -39,6 +41,7 @@
         exitMarketCapUsd:row.status==='closed'&&finite(row.exitMarketCapUsd)&&row.exitMarketCapUsd>=0?row.exitMarketCapUsd:null,
         entryMarketCapSol:finite(row.entryMarketCapSol)&&row.entryMarketCapSol>=0?row.entryMarketCapSol:null,
         exitMarketCapSol:row.status==='closed'&&finite(row.exitMarketCapSol)&&row.exitMarketCapSol>=0?row.exitMarketCapSol:null,
+        entryUsdConversion:usdConversion(row.entryUsdConversion),exitUsdConversion:row.status==='closed'?usdConversion(row.exitUsdConversion):null,
         pnlBasis:row.pnlBasis==='delayed_market_cap_change'?'delayed_market_cap_change':'executed_gross_proceeds',
         pnlPercent:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
         scorePercent:row.status==='written_off'?-100:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
@@ -184,7 +187,11 @@
       const score=document.createElement('div');score.className='drawer-score';score.innerHTML=`<span class="eyebrow">ACCOUNTING SCORE</span><strong class="negative">${percent(trade.scorePercent)}</strong><p>Unsold tokens retained. No executed exit is claimed.</p>`;
       $('drawer-content').querySelector('.drawer-pnl').after(score);
     }
-    const mcNote=document.createElement('p');mcNote.className='drawer-mc-note';mcNote.textContent=trade.entryMarketCapUsd===null&&trade.entryMarketCapSol!==null?'Market caps shown in SOL; no USD conversion is available.':'USD market caps use cached display-time SOL/USD.';
+    const mcNote=document.createElement('p');mcNote.className='drawer-mc-note';
+    mcNote.textContent=trade.pnlBasis==='delayed_market_cap_change'?'USD caps use SOL/USD for the recorded minute. '
+      +(trade.entryUsdConversion?'Entry: '+date(new Date(trade.entryUsdConversion.minuteStartMs).toISOString(),true)+'. ':'Entry USD conversion unavailable. ')
+      +(trade.status==='closed'?(trade.exitUsdConversion?'Exit: '+date(new Date(trade.exitUsdConversion.minuteStartMs).toISOString(),true)+'.':'Exit USD conversion unavailable.'):'')
+      :'USD market caps use cached display-time SOL/USD.';
     $('drawer-content').querySelector('.drawer-caps').after(mcNote);
     const version=document.createElement('p');version.className='drawer-version';version.textContent='Bot at entry: '+(trade.botVersion?'v'+trade.botVersion:'Before versioning');$('drawer-content').append(version);
     $('copy-ca').addEventListener('click',()=>copy(trade.mint));
