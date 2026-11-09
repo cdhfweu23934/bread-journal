@@ -480,6 +480,12 @@
       "version": "1.0.79",
       "registeredAt": "2026-11-09T16:47:33.246Z",
       "summary": "Compare matching wire transactions across feeds using equivalent empty balance and reward representations; keep amounts, fees, owners, logs and raw evidence strict. Preserve the existing entry strateg",
+      "active": false
+    },
+    {
+      "version": "1.0.80",
+      "registeredAt": "2026-11-09T17:00:23.489Z",
+      "summary": "Keep unsupported pre-entry candidates from stopping the runner; handle the observed 75-transaction batch within a bounded 128-transaction intake. Strategy, history and budget allowances stay unchanged",
       "active": true
     }
   ],
