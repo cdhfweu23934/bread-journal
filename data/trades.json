@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T19:12:58.751Z",
+  "updatedAt": "2026-11-09T19:13:03.025Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -516,12 +516,18 @@
       "version": "1.0.85",
       "registeredAt": "2026-11-09T18:39:01.089Z",
       "summary": "Start processed tracking only after strategy qualification and reservation, before acquiring the fresh execution quote. Handle small-frame bursts within unchanged byte and credit bounds; preserve cust",
+      "active": false
+    },
+    {
+      "version": "1.0.86",
+      "registeredAt": "2026-11-09T19:17:59.156Z",
+      "summary": "Screen up to three original native candidates with deadline-aware serial work. Preserve all buy conditions and one pending entry/position; pin the committed winner and close competing watches before f",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-09T19:12:58.751Z",
+    "asOf": "2026-11-09T19:13:03.025Z",
     "botVersion": "1.0.85",
     "closed": 45,
     "unresolved": 0,
