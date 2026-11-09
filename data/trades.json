@@ -510,6 +510,12 @@
       "version": "1.0.84",
       "registeredAt": "2026-11-09T18:23:34.057Z",
       "summary": "Resume clean paper sessions that ended before tracking a coin. Preserve funds, fees and history while validating up to 128 parent sessions with all cycle, custody and source-closure checks retained. S",
+      "active": false
+    },
+    {
+      "version": "1.0.85",
+      "registeredAt": "2026-11-09T18:39:01.089Z",
+      "summary": "Start processed tracking only after strategy qualification and reservation, before acquiring the fresh execution quote. Handle small-frame bursts within unchanged byte and credit bounds; preserve cust",
       "active": true
     }
   ],
