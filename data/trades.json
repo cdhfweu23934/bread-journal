@@ -642,6 +642,12 @@
       "version": "1.0.106",
       "registeredAt": "2026-11-10T07:48:47.332Z",
       "summary": "Recognize exact native compact holder-reward creation arguments only when the same successful receipt proves matching zero-fee holder event and canonical PDA. Preserve all other creation, ownership an",
+      "active": false
+    },
+    {
+      "version": "1.0.107",
+      "registeredAt": "2026-11-10T08:31:58.041Z",
+      "summary": "Paper inventory recovery trial: reread creator-role risk after fresh role selling and a new outside buyer. Preserve entry guards, the original 120s deadline, five-second spacing and quote-attempt limi",
       "active": true
     }
   ],
