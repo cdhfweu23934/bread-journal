@@ -600,6 +600,12 @@
       "version": "1.0.99",
       "registeredAt": "2026-11-10T00:50:09.266Z",
       "summary": "Restore live Axiom discovery and per-token trade callbacks for the verified CrR7WT2H public module and xj MAIN singleton; retain closed module mappings and all entry, risk and paper-call rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.100",
+      "registeredAt": "2026-11-10T01:10:52.819Z",
+      "summary": "Reclaim paper watch slots after three unqualified price checks when received BUY flow is stale on both clocks; retain fresh buys during quoting and all existing entry, risk and delay requirements.",
       "active": true
     }
   ],
