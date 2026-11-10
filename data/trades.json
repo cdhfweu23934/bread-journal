@@ -684,6 +684,12 @@
       "version": "1.0.113",
       "registeredAt": "2026-11-10T15:31:34.773Z",
       "summary": "Allow bounded nonblank token names and symbols in paper calls, including short and non-Latin labels; retain canonical origin, Mayhem, risk, quote, delay and budget guards.",
+      "active": false
+    },
+    {
+      "version": "1.0.114",
+      "registeredAt": "2026-11-10T17:32:46.663Z",
+      "summary": "Refresh the paper-call source clock at most every10 seconds, preserving the existing30-second freshness lease, uncertainty checks and fail-closed behavior.",
       "active": true
     }
   ],
