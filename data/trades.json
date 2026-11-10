@@ -654,6 +654,12 @@
       "version": "1.0.108",
       "registeredAt": "2026-11-10T10:52:06.508Z",
       "summary": "Add paper-only USDC Pump quotes with canonical births, explicit USDC accounting, fresh 500/400ms pricing, ownership and inventory guards, and USD dashboard conversion. Preserve SOL history and uncappe",
+      "active": false
+    },
+    {
+      "version": "1.0.109",
+      "registeredAt": "2026-11-10T11:37:10.887Z",
+      "summary": "Extend bounded outcome research to reported quote assets with explicit price units. Compact terminal metadata within existing limits; keep trading rules, watch capacity, history and usage counters unc",
       "active": true
     }
   ],
