@@ -588,6 +588,12 @@
       "version": "1.0.97",
       "registeredAt": "2026-11-09T23:40:21.259Z",
       "summary": "Let healthy paper observers record an empty early received baseline; require live later buyers, unchanged risk checks and fresh delayed prices before any entry. Unknown current flow still blocks.",
+      "active": false
+    },
+    {
+      "version": "1.0.98",
+      "registeredAt": "2026-11-10T00:15:43.357Z",
+      "summary": "Observe ordinary Pump reference prices when 1% reserve sizing rounds to zero, using a stable reference-only SDK probe. Keep all later funded-liquidity, price, demand, ownership and delay requirements.",
       "active": true
     }
   ],
