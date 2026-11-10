@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T13:15:31.883Z",
+  "updatedAt": "2026-11-10T13:24:13.681Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -660,13 +660,19 @@
       "version": "1.0.109",
       "registeredAt": "2026-11-10T11:37:10.887Z",
       "summary": "Extend bounded outcome research to reported quote assets with explicit price units. Compact terminal metadata within existing limits; keep trading rules, watch capacity, history and usage counters unc",
+      "active": false
+    },
+    {
+      "version": "1.0.110",
+      "registeredAt": "2026-11-10T13:21:04.799Z",
+      "summary": "Extend paper-only Pump quotes to wrapped NEAR with canonical fixed fees and exact mint USD pricing; preserve ownership, momentum, delays, native/USDC behavior, history and usage counters.",
       "active": true
     }
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-10T13:15:31.883Z",
-    "botVersion": "1.0.109",
+    "asOf": "2026-11-10T13:24:13.681Z",
+    "botVersion": "1.0.110",
     "closed": 48,
     "unresolved": 0,
     "open": 0
