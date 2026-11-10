@@ -618,6 +618,12 @@
       "version": "1.0.102",
       "registeredAt": "2026-11-10T04:05:11.720Z",
       "summary": "Paper-only: retain one quiet launch observer without SDK polling; resume on a fresh unseen buyer, preserve the original 120s deadline, and require two fresh spaced prices after resumption.",
+      "active": false
+    },
+    {
+      "version": "1.0.103",
+      "registeredAt": "2026-11-10T04:37:00.058Z",
+      "summary": "Paper creator-risk trial: reject signed relaunch matches to user-flagged creator arguments and canonical-role SELL majorities. Renew after a cleaned connection closure using the existing flat-run path",
       "active": true
     }
   ],
