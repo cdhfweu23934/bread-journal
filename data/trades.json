@@ -624,6 +624,12 @@
       "version": "1.0.103",
       "registeredAt": "2026-11-10T04:37:00.058Z",
       "summary": "Paper creator-risk trial: reject signed relaunch matches to user-flagged creator arguments and canonical-role SELL majorities. Renew after a cleaned connection closure using the existing flat-run path",
+      "active": false
+    },
+    {
+      "version": "1.0.104",
+      "registeredAt": "2026-11-10T06:52:21.028Z",
+      "summary": "Restore existing bounded public-flow observations after paper candidate rejection for strategy comparison; exclude reported Mayhem samples. Keep trading rules unchanged and raise the disk journal ceil",
       "active": true
     }
   ],
