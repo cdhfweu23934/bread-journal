@@ -696,6 +696,12 @@
       "version": "1.0.115",
       "registeredAt": "2026-11-10T19:56:42.816Z",
       "summary": "Retry cleanly closed, flat paper runs up to three times after clock-lease failure, preserving fresh calibration, history and quota; honor stops and pending work.",
+      "active": false
+    },
+    {
+      "version": "1.0.116",
+      "registeredAt": "2026-11-10T21:36:13.285Z",
+      "summary": "Restore origin reads with append-only HTTP response capacity, preserve credit/request limits and charges, require one ordinary read beyond exit reserve, and retain verified creator roles privately.",
       "active": true
     }
   ],
