@@ -690,6 +690,12 @@
       "version": "1.0.114",
       "registeredAt": "2026-11-10T17:32:46.663Z",
       "summary": "Refresh the paper-call source clock at most every10 seconds, preserving the existing30-second freshness lease, uncertainty checks and fail-closed behavior.",
+      "active": false
+    },
+    {
+      "version": "1.0.115",
+      "registeredAt": "2026-11-10T19:56:42.816Z",
+      "summary": "Retry cleanly closed, flat paper runs up to three times after clock-lease failure, preserving fresh calibration, history and quota; honor stops and pending work.",
       "active": true
     }
   ],
