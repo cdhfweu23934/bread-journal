@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T10:49:42.996Z",
+  "updatedAt": "2026-11-10T10:55:13.388Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -648,13 +648,19 @@
       "version": "1.0.107",
       "registeredAt": "2026-11-10T08:31:58.041Z",
       "summary": "Paper inventory recovery trial: reread creator-role risk after fresh role selling and a new outside buyer. Preserve entry guards, the original 120s deadline, five-second spacing and quote-attempt limi",
+      "active": false
+    },
+    {
+      "version": "1.0.108",
+      "registeredAt": "2026-11-10T10:52:06.508Z",
+      "summary": "Add paper-only USDC Pump quotes with canonical births, explicit USDC accounting, fresh 500/400ms pricing, ownership and inventory guards, and USD dashboard conversion. Preserve SOL history and uncappe",
       "active": true
     }
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-10T10:49:42.996Z",
-    "botVersion": "1.0.107",
+    "asOf": "2026-11-10T10:55:13.388Z",
+    "botVersion": "1.0.108",
     "closed": 48,
     "unresolved": 0,
     "open": 0
