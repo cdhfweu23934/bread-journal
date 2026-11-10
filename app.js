@@ -27,7 +27,7 @@
   const usdConversion=value=>value&&value.source==='coinbase_SOL_USD_1m_close'&&Number.isSafeInteger(value.minuteStartMs)
     &&value.minuteStartMs%60000===0&&value.minuteStartMs>=946684800000&&value.minuteStartMs<4102444800000&&validDate(new Date(value.minuteStartMs).toISOString())
     ?{source:value.source,minuteStartMs:value.minuteStartMs}
-    :value?.source==='coinbase_USDC_USD_exchange_rate'&&Number.isSafeInteger(value.observedAtMs)
+    :(value?.source==='coinbase_USDC_USD_exchange_rate'||value?.source==='geckoterminal_solana_quote_usd_price'&&value.quoteMint==='3ZLekZYq2qkZiSpnSvabjit34tUkjSwD1JFuW9as9wBG')&&Number.isSafeInteger(value.observedAtMs)
       &&value.observedAtMs>=946684800000&&value.observedAtMs<4102444800000?{source:value.source,observedAtMs:value.observedAtMs}:null;
   function normalize(payload) {
     if (!payload || payload.schemaVersion !== 1 || !Array.isArray(payload.trades) || payload.trades.length > 10000) throw new Error('This export has an unsupported format.');
@@ -44,7 +44,7 @@
         entryMarketCapSol:finite(row.entryMarketCapSol)&&row.entryMarketCapSol>=0?row.entryMarketCapSol:null,
         exitMarketCapSol:row.status==='closed'&&finite(row.exitMarketCapSol)&&row.exitMarketCapSol>=0?row.exitMarketCapSol:null,
         entryUsdConversion:usdConversion(row.entryUsdConversion),exitUsdConversion:row.status==='closed'?usdConversion(row.exitUsdConversion):null,
-        quoteCurrency:row.quoteCurrency==='USDC'?'USDC':null,
+        quoteCurrency:['USDC','wNEAR'].includes(row.quoteCurrency)?row.quoteCurrency:null,
         pnlBasis:row.pnlBasis==='delayed_market_cap_change'?'delayed_market_cap_change':'executed_gross_proceeds',
         pnlPercent:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
         scorePercent:row.status==='written_off'?-100:row.status==='closed'&&finite(row.pnlPercent)?row.pnlPercent:null,
@@ -191,7 +191,7 @@
       $('drawer-content').querySelector('.drawer-pnl').after(score);
     }
     const mcNote=document.createElement('p');mcNote.className='drawer-mc-note';
-    mcNote.textContent=trade.pnlBasis==='delayed_market_cap_change'&&trade.quoteCurrency==='USDC'?'USD caps use recorded USDC/USD rates. PnL uses USDC market-cap changes. '
+    mcNote.textContent=trade.pnlBasis==='delayed_market_cap_change'&&trade.quoteCurrency?'USD caps use recorded '+trade.quoteCurrency+'/USD rates. PnL uses '+trade.quoteCurrency+' market-cap changes. '
       +(trade.entryUsdConversion?'Entry rate: '+date(new Date(trade.entryUsdConversion.observedAtMs).toISOString(),true)+'. ':'Entry USD conversion unavailable. ')
       +(trade.status==='closed'?(trade.exitUsdConversion?'Exit rate: '+date(new Date(trade.exitUsdConversion.observedAtMs).toISOString(),true)+'.':'Exit USD conversion unavailable.'):'')
       :trade.pnlBasis==='delayed_market_cap_change'?'USD caps use SOL/USD for the recorded minute. '
