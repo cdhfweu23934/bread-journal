@@ -672,6 +672,12 @@
       "version": "1.0.111",
       "registeredAt": "2026-11-10T13:44:18.101Z",
       "summary": "Honor the production clock freshness assertion status return in paper quote readers; retain stale-clock rejection and every quote-age, currency and trading guard.",
+      "active": false
+    },
+    {
+      "version": "1.0.112",
+      "registeredAt": "2026-11-10T15:08:45.319Z",
+      "summary": "Continue paper-call observation intake on the same pilot and used counters, bounded by existing origin and data limits; preserve entry, risk, history and budget guards.",
       "active": true
     }
   ],
