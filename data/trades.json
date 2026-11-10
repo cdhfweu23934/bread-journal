@@ -612,6 +612,12 @@
       "version": "1.0.101",
       "registeredAt": "2026-11-10T02:20:10.279Z",
       "summary": "Reject reported multi-wallet BUYs in one creation-window transaction using Axiom early trade data alongside mandatory current ownership checks; preserve explicit unknowns for unavailable auxiliary dat",
+      "active": false
+    },
+    {
+      "version": "1.0.102",
+      "registeredAt": "2026-11-10T04:05:11.720Z",
+      "summary": "Paper-only: retain one quiet launch observer without SDK polling; resume on a fresh unseen buyer, preserve the original 120s deadline, and require two fresh spaced prices after resumption.",
       "active": true
     }
   ],
