@@ -606,6 +606,12 @@
       "version": "1.0.100",
       "registeredAt": "2026-11-10T01:10:52.819Z",
       "summary": "Reclaim paper watch slots after three unqualified price checks when received BUY flow is stale on both clocks; retain fresh buys during quoting and all existing entry, risk and delay requirements.",
+      "active": false
+    },
+    {
+      "version": "1.0.101",
+      "registeredAt": "2026-11-10T02:20:10.279Z",
+      "summary": "Reject reported multi-wallet BUYs in one creation-window transaction using Axiom early trade data alongside mandatory current ownership checks; preserve explicit unknowns for unavailable auxiliary dat",
       "active": true
     }
   ],
