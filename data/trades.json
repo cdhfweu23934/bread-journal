@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T00:31:13.720Z",
+  "updatedAt": "2026-11-10T00:39:28.990Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -594,12 +594,18 @@
       "version": "1.0.98",
       "registeredAt": "2026-11-10T00:15:43.357Z",
       "summary": "Observe ordinary Pump reference prices when 1% reserve sizing rounds to zero, using a stable reference-only SDK probe. Keep all later funded-liquidity, price, demand, ownership and delay requirements.",
+      "active": false
+    },
+    {
+      "version": "1.0.99",
+      "registeredAt": "2026-11-10T00:50:09.266Z",
+      "summary": "Restore live Axiom discovery and per-token trade callbacks for the verified CrR7WT2H public module and xj MAIN singleton; retain closed module mappings and all entry, risk and paper-call rules.",
       "active": true
     }
   ],
   "live": {
     "state": "stopped",
-    "asOf": "2026-11-10T00:31:13.720Z",
+    "asOf": "2026-11-10T00:39:28.990Z",
     "botVersion": "1.0.98",
     "closed": 48,
     "unresolved": 0,
