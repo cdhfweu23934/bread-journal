@@ -630,6 +630,12 @@
       "version": "1.0.104",
       "registeredAt": "2026-11-10T06:52:21.028Z",
       "summary": "Restore existing bounded public-flow observations after paper candidate rejection for strategy comparison; exclude reported Mayhem samples. Keep trading rules unchanged and raise the disk journal ceil",
+      "active": false
+    },
+    {
+      "version": "1.0.105",
+      "registeredAt": "2026-11-10T06:58:32.940Z",
+      "summary": "Update the research trade observer with the two current Axiom bundle identities already supported by the trading feed. Preserve callback ownership, sampling bounds and all entry/exit rules.",
       "active": true
     }
   ],
