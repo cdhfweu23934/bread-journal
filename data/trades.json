@@ -792,6 +792,12 @@
       "version": "1.0.131",
       "registeredAt": "2026-11-11T17:10:07.530Z",
       "summary": "Support ordinary Pump launches quoted in PUMP with fresh inactive-hook checks; retain existing fees, risk guards and delays.",
+      "active": false
+    },
+    {
+      "version": "1.0.132",
+      "registeredAt": "2026-11-11T17:30:11.072Z",
+      "summary": "Wait for fresh buying before reserving a native paper entry when the required delay would outlast BUY freshness; repeat full qualification.",
       "active": true
     }
   ],
