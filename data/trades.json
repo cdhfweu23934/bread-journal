@@ -822,6 +822,12 @@
       "version": "1.0.136",
       "registeredAt": "2026-11-11T19:46:51.350Z",
       "summary": "Keep an already deferred bundle-only native watch observing after a verified creator-inventory stress failure, with zero insiders, bounded recovery and unchanged fresh entry checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.137",
+      "registeredAt": "2026-11-11T20:18:32.221Z",
+      "summary": "Support standard nonce and seeded-account launches; prioritize zero-insider contenders without increasing reported concentration, after confirmed cleanup. Entry rules and delays unchanged.",
       "active": true
     }
   ],
