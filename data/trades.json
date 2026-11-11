@@ -798,6 +798,12 @@
       "version": "1.0.132",
       "registeredAt": "2026-11-11T17:30:11.072Z",
       "summary": "Wait for fresh buying before reserving a native paper entry when the required delay would outlast BUY freshness; repeat full qualification.",
+      "active": false
+    },
+    {
+      "version": "1.0.133",
+      "registeredAt": "2026-11-11T18:29:14.703Z",
+      "summary": "Continue paper calls using current included Helius headroom while preserving the original budget identity, used counters, strategy and trade history.",
       "active": true
     }
   ],
