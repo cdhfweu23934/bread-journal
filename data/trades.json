@@ -780,6 +780,12 @@
       "version": "1.0.129",
       "registeredAt": "2026-11-11T13:07:06.501Z",
       "summary": "Native paper watches may wait on declining reported bundle/insider holdings using fresh quotes within original limits; entry still requires zero holdings and every existing risk check.",
+      "active": false
+    },
+    {
+      "version": "1.0.130",
+      "registeredAt": "2026-11-11T15:46:24.280Z",
+      "summary": "Paper trial: model bundle-only holdings against the existing spot stop using matched pool data; retain structural and insider vetoes and fresh delayed quotes. Inventory conversion remains an assumptio",
       "active": true
     }
   ],
