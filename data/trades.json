@@ -744,6 +744,12 @@
       "version": "1.0.123",
       "registeredAt": "2026-11-11T06:05:03.859Z",
       "summary": "Watch four paper candidates plus one parked candidate during goal continuation; preserve entry filters, trade delays, single-trade locking and the existing data allowance.",
+      "active": false
+    },
+    {
+      "version": "1.0.124",
+      "registeredAt": "2026-11-11T07:42:18.849Z",
+      "summary": "Recover one settled minimum-context-slot error in the first liquidity-read pair within the original deadline; preserve all charges and trading rules.",
       "active": true
     }
   ],
