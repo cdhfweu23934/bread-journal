@@ -786,6 +786,12 @@
       "version": "1.0.130",
       "registeredAt": "2026-11-11T15:46:24.280Z",
       "summary": "Paper trial: model bundle-only holdings against the existing spot stop using matched pool data; retain structural and insider vetoes and fresh delayed quotes. Inventory conversion remains an assumptio",
+      "active": false
+    },
+    {
+      "version": "1.0.131",
+      "registeredAt": "2026-11-11T17:10:07.530Z",
+      "summary": "Support ordinary Pump launches quoted in PUMP with fresh inactive-hook checks; retain existing fees, risk guards and delays.",
       "active": true
     }
   ],
