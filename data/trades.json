@@ -750,6 +750,12 @@
       "version": "1.0.124",
       "registeredAt": "2026-11-11T07:42:18.849Z",
       "summary": "Recover one settled minimum-context-slot error in the first liquidity-read pair within the original deadline; preserve all charges and trading rules.",
+      "active": false
+    },
+    {
+      "version": "1.0.125",
+      "registeredAt": "2026-11-11T09:06:15.343Z",
+      "summary": "Prefer stronger quiet paper watches above the existing momentum threshold over weaker quiet watches; preserve entry safeguards, stress recovery, delays, watch limits, history and data counters.",
       "active": true
     }
   ],
