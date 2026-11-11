@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T21:06:26.012Z",
+  "updatedAt": "2026-11-11T21:06:45.480Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -833,25 +833,25 @@
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-11T21:06:26.012Z",
+    "asOf": "2026-11-11T21:06:45.480Z",
     "botVersion": "1.0.137",
-    "closed": 49,
+    "closed": 50,
     "unresolved": 0,
-    "open": 1
+    "open": 0
   },
   "stats": {
-    "closedTrades": 49,
+    "closedTrades": 50,
     "writtenOffTrades": 6,
-    "scoredTrades": 55,
+    "scoredTrades": 56,
     "unresolvedTrades": 0,
-    "openTrades": 1,
-    "knownPnlTrades": 49,
+    "openTrades": 0,
+    "knownPnlTrades": 50,
     "wins": 9,
-    "losses": 40,
-    "winRatePercent": 18.367347,
-    "meanPnlPercent": -10.606223,
-    "meanScorePercent": -20.358271,
-    "lastTenCappedMeanPercent": -0.301662
+    "losses": 41,
+    "winRatePercent": 18,
+    "meanPnlPercent": -11.371865,
+    "meanScorePercent": -20.867736,
+    "lastTenCappedMeanPercent": -25.602827
   },
   "trades": [
     {
@@ -1682,11 +1682,11 @@
       "name": null,
       "symbol": null,
       "botVersion": "1.0.137",
-      "status": "open",
+      "status": "closed",
       "entryMarketCapUsd": 4660.63,
       "exitMarketCapUsd": null,
       "entryMarketCapSol": 54.895555,
-      "exitMarketCapSol": null,
+      "exitMarketCapSol": 28.058034,
       "pnlBasis": "delayed_market_cap_change",
       "entryUsdConversion": {
         "source": "coinbase_SOL_USD_1m_close",
@@ -1694,10 +1694,10 @@
         "solUsd": "84.9"
       },
       "exitUsdConversion": null,
-      "pnlPercent": null,
-      "scorePercent": null,
+      "pnlPercent": -48.888331,
+      "scorePercent": -48.888331,
       "openedAt": "2026-11-11T21:06:18.929Z",
-      "closedAt": null
+      "closedAt": "2026-11-11T21:06:36.010Z"
     }
   ]
 }
