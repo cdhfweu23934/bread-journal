@@ -810,6 +810,12 @@
       "version": "1.0.134",
       "registeredAt": "2026-11-11T18:55:44.364Z",
       "summary": "Observe eight concurrent paper candidates while retaining the current entry safeguards and conservative setup timing.",
+      "active": false
+    },
+    {
+      "version": "1.0.135",
+      "registeredAt": "2026-11-11T19:21:36.177Z",
+      "summary": "Continued paper calls yield after completed reference, ownership-risk and confirmation work, avoiding an idle 100ms before another due watch; waiting cadence and all entry conditions and delays remain",
       "active": true
     }
   ],
