@@ -756,6 +756,12 @@
       "version": "1.0.125",
       "registeredAt": "2026-11-11T09:06:15.343Z",
       "summary": "Prefer stronger quiet paper watches above the existing momentum threshold over weaker quiet watches; preserve entry safeguards, stress recovery, delays, watch limits, history and data counters.",
+      "active": false
+    },
+    {
+      "version": "1.0.126",
+      "registeredAt": "2026-11-11T09:49:35.651Z",
+      "summary": "Confirm native paper breakouts with three rising owned samples and enter on the first existing 50% crossing; retain fresh demand, ownership and inventory checks, delays, original deadlines and data li",
       "active": true
     }
   ],
