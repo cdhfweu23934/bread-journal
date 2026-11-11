@@ -762,6 +762,12 @@
       "version": "1.0.126",
       "registeredAt": "2026-11-11T09:49:35.651Z",
       "summary": "Confirm native paper breakouts with three rising owned samples and enter on the first existing 50% crossing; retain fresh demand, ownership and inventory checks, delays, original deadlines and data li",
+      "active": false
+    },
+    {
+      "version": "1.0.127",
+      "registeredAt": "2026-11-11T11:32:31.277Z",
+      "summary": "Native paper calls use venue cost for probe sizing and risk checks, retaining verified rent separately; preserve principal, liquidity, ownership and inventory stress guards.",
       "active": true
     }
   ],
