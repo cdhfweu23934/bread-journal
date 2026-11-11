@@ -726,6 +726,12 @@
       "version": "1.0.120",
       "registeredAt": "2026-11-11T03:18:08.876Z",
       "summary": "Support verified fee-free Token-2022 mihao Pump quotes with canonical parent binding, quote-program-aware pricing and USD display.",
+      "active": false
+    },
+    {
+      "version": "1.0.121",
+      "registeredAt": "2026-11-11T03:47:43.994Z",
+      "summary": "Retry one fully settled quote-pair context lag within the original deadline, preserving slot floors and budget charges.",
       "active": true
     }
   ],
