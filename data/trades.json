@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T22:05:51.592Z",
+  "updatedAt": "2026-11-11T22:06:26.912Z",
   "versions": [
     {
       "version": "1.0.0",
@@ -833,7 +833,7 @@
   ],
   "live": {
     "state": "running",
-    "asOf": "2026-11-11T22:05:51.592Z",
+    "asOf": "2026-11-11T22:06:26.912Z",
     "botVersion": "1.0.137",
     "closed": 51,
     "unresolved": 0,
@@ -1710,13 +1710,21 @@
       "symbol": null,
       "botVersion": "1.0.137",
       "status": "closed",
-      "entryMarketCapUsd": null,
-      "exitMarketCapUsd": null,
+      "entryMarketCapUsd": 4762.13,
+      "exitMarketCapUsd": 3203.72,
       "entryMarketCapSol": 56.383217,
       "exitMarketCapSol": 37.922806,
       "pnlBasis": "delayed_market_cap_change",
-      "entryUsdConversion": null,
-      "exitUsdConversion": null,
+      "entryUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794434640000,
+        "solUsd": "84.46"
+      },
+      "exitUsdConversion": {
+        "source": "coinbase_SOL_USD_1m_close",
+        "minuteStartMs": 1794434700000,
+        "solUsd": "84.48"
+      },
       "pnlPercent": -32.740967,
       "scorePercent": -32.740967,
       "openedAt": "2026-11-11T22:04:05.228Z",
