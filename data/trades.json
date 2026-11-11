@@ -702,6 +702,12 @@
       "version": "1.0.116",
       "registeredAt": "2026-11-10T21:36:13.285Z",
       "summary": "Restore origin reads with append-only HTTP response capacity, preserve credit/request limits and charges, require one ordinary read beyond exit reserve, and retain verified creator roles privately.",
+      "active": false
+    },
+    {
+      "version": "1.0.117",
+      "registeredAt": "2026-11-11T00:27:02.038Z",
+      "summary": "Resume clean flat paper runs after the native source clock becomes unavailable.",
       "active": true
     }
   ],
