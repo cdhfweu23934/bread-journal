@@ -720,6 +720,12 @@
       "version": "1.0.119",
       "registeredAt": "2026-11-11T02:51:10.220Z",
       "summary": "Retain allowlisted RPC failure codes in paper logs to diagnose lost reference and confirmation reads.",
+      "active": false
+    },
+    {
+      "version": "1.0.120",
+      "registeredAt": "2026-11-11T03:18:08.876Z",
+      "summary": "Support verified fee-free Token-2022 mihao Pump quotes with canonical parent binding, quote-program-aware pricing and USD display.",
       "active": true
     }
   ],
