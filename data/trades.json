@@ -768,6 +768,12 @@
       "version": "1.0.127",
       "registeredAt": "2026-11-11T11:32:31.277Z",
       "summary": "Native paper calls use venue cost for probe sizing and risk checks, retaining verified rent separately; preserve principal, liquidity, ownership and inventory stress guards.",
+      "active": false
+    },
+    {
+      "version": "1.0.128",
+      "registeredAt": "2026-11-11T12:18:58.258Z",
+      "summary": "Native paper mode observes one initially flagged holder candidate until signal; final zero bundled/insider holdings, structural vetoes and all existing entry risk gates remain required.",
       "active": true
     }
   ],
