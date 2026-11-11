@@ -708,6 +708,12 @@
       "version": "1.0.117",
       "registeredAt": "2026-11-11T00:27:02.038Z",
       "summary": "Resume clean flat paper runs after the native source clock becomes unavailable.",
+      "active": false
+    },
+    {
+      "version": "1.0.118",
+      "registeredAt": "2026-11-11T01:37:53.072Z",
+      "summary": "Honor Pump standard SOL and USDC creation fee semantics while preserving raw arguments, canonical holder identity and custom-quote fee checks.",
       "active": true
     }
   ],
