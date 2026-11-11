@@ -816,6 +816,12 @@
       "version": "1.0.135",
       "registeredAt": "2026-11-11T19:21:36.177Z",
       "summary": "Continued paper calls yield after completed reference, ownership-risk and confirmation work, avoiding an idle 100ms before another due watch; waiting cadence and all entry conditions and delays remain",
+      "active": false
+    },
+    {
+      "version": "1.0.136",
+      "registeredAt": "2026-11-11T19:46:51.350Z",
+      "summary": "Keep an already deferred bundle-only native watch observing after a verified creator-inventory stress failure, with zero insiders, bounded recovery and unchanged fresh entry checks.",
       "active": true
     }
   ],
