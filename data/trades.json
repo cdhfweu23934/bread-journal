@@ -714,6 +714,12 @@
       "version": "1.0.118",
       "registeredAt": "2026-11-11T01:37:53.072Z",
       "summary": "Honor Pump standard SOL and USDC creation fee semantics while preserving raw arguments, canonical holder identity and custom-quote fee checks.",
+      "active": false
+    },
+    {
+      "version": "1.0.119",
+      "registeredAt": "2026-11-11T02:51:10.220Z",
+      "summary": "Retain allowlisted RPC failure codes in paper logs to diagnose lost reference and confirmation reads.",
       "active": true
     }
   ],
