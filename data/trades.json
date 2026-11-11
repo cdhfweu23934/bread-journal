@@ -804,6 +804,12 @@
       "version": "1.0.133",
       "registeredAt": "2026-11-11T18:29:14.703Z",
       "summary": "Continue paper calls using current included Helius headroom while preserving the original budget identity, used counters, strategy and trade history.",
+      "active": false
+    },
+    {
+      "version": "1.0.134",
+      "registeredAt": "2026-11-11T18:55:44.364Z",
+      "summary": "Observe eight concurrent paper candidates while retaining the current entry safeguards and conservative setup timing.",
       "active": true
     }
   ],
