@@ -828,6 +828,12 @@
       "version": "1.0.137",
       "registeredAt": "2026-11-11T20:18:32.221Z",
       "summary": "Support standard nonce and seeded-account launches; prioritize zero-insider contenders without increasing reported concentration, after confirmed cleanup. Entry rules and delays unchanged.",
+      "active": false
+    },
+    {
+      "version": "1.0.138",
+      "registeredAt": "2026-11-11T22:09:06.266Z",
+      "summary": "Require fresh reported buyer growth for native paper entries, preserve the 500 ms delay margin, and recheck growth after the entry delay. A prospective paper hypothesis; profitability remains unproven",
       "active": true
     }
   ],
